@@ -6,13 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/28 16:23:34 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 17:49:38 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int main(int argc, char **argv)
 {
-    t_stacks    push_swap;
+    t_a	*stack_a;
+    t_b	*stack_b;
     
-    push_swap = malloc(sizeof(t_stacks));
+    t_a = malloc(sizeof(t_a));
+	t_b = malloc(sizeof(t_b));
 }
