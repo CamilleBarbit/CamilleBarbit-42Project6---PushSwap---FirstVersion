@@ -6,13 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:20:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/28 17:53:35 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 18:56:05 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(t_stacks stack_a)
+void	sa(t_a stack_a)
 {
 	int tempo;
 
@@ -23,7 +23,7 @@ void	sa(t_stacks stack_a)
 	stack_a->tab_a[1] = tempo;
 }
 
-void	sb(t_stacks stack_b)
+void	sb(t_b stack_b)
 {
 	int tempo;
 
@@ -34,7 +34,7 @@ void	sb(t_stacks stack_b)
 	stack_a->tab_b[1] = tempo;
 }
 
-void	ss(t_stacks stack_a, t_stacks stack_b)
+void	ss(t_a stack_a, t_b stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);

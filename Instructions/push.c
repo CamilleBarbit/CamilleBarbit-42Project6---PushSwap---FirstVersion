@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:01:31 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/28 18:50:15 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 18:56:35 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	remove_top(int *tab, int size)
 	size -= 1;
 }
 
-void	pa(t_stacks *stack_a, t_stacks *stack_b)
+void	pa(t_a *stack_a, t_b *stack_b)
 {
 	if (!stack_b->tab_b)
 		return ;
@@ -57,7 +57,7 @@ void	pa(t_stacks *stack_a, t_stacks *stack_b)
 	remove_top(stack_b->tab_b, stack_b->size_b);
 }
 
-void	pb(t_stacks *stack_a, t_stacks *stack_b)
+void	pb(t_a *stack_a, t_b *stack_b)
 {
 	if (!stack_a->tab_a)
 		return ;
