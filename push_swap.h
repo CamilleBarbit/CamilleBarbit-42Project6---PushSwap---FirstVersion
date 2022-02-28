@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:50:58 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/28 16:08:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/02/28 17:52:19 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,19 @@
 #include "libft.h"
 
 
-typdef struct   s_stacks;
+typdef struct   s_a;
 {
-	int *stack_a;
-	int	*stack_b;
-	int	*temp;
+	int *tab_a;
 	int	size_a;
+
+} t_a;
+
+typdef struct   s_b;
+{
+	int *tab_b;
 	int	size_b;
 
-} t_stacks;
-
+} t_b;
 
 
 
