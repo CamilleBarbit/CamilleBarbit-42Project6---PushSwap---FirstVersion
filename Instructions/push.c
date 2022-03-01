@@ -6,61 +6,62 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:01:31 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 11:21:22 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 11:58:03 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	add_top(int *tab, int nb, int size)
+void	add_top(t_a *stack, int nb)
 {
 	int tempo1;
 	int tempo2;
 	int i;
     
 	i = 0;
-	tempo1 = tab[0];
-	while (i < size)
+	tempo1 = stack->tab[0];
+	while (i < stack->size)
 	{
 		tempo2 = tempo1;
-		tempo1 = tab[i + 1];
-		tab[i + 1] = tempo2;
+		tempo1 = stack->tab[i + 1];
+		stack->tab[i + 1] = tempo2;
 		i++;
 	} 
-	tab[0] = nb;
-	size += 1;
+	stack->tab[0] = nb;
+	stack->size += 1;
 }
 
-void	remove_top(int *tab, int size)
+
+void	remove_top(t_a *stack)
 {
 	int tempo1;
 	int tempo2;
 	int i;
 
-	i = size - 1;
-	tempo1 = tab[i];
+	i = stack->size - 1;
+	tempo1 = stack->tab[i];
 	while (i > 0)
 	{
 		tempo2 = tempo1;
-		tempo1 = tab[i - 1];
-		tab[i - 1] = tempo2;
+		tempo1 = stack->tab[i - 1];
+		stack->tab[i - 1] = tempo2;
 		i--;
 	}
-	size -= 1;
+	stack->size -= 1;
 }
 
-void	pa(t_a *stack_a, t_b *stack_b)
+void	pa(t_a *stack_a, t_a *stack_b)
 {
-	if (!stack_b->tab_b)
+	if (!stack_b->tab)
 		return ;
-	add_top(stack_a->tab_a, stack_b->tab_b[0], stack_a->size_a);
-	remove_top(stack_b->tab_b, stack_b->size_b);
+	add_top(stack_a, stack_b->tab[0]);
+	remove_top(stack_b);
 }
 
-void	pb(t_a *stack_a, t_b *stack_b)
+void	pb(t_a *stack_a, t_a *stack_b)
 {
-	if (!stack_a->tab_a)
+	if (!stack_a->tab)
 		return ;
-	add_top(stack_b->tab_b, stack_a->tab_a[0], stack_b->size_b);
-	remove_top(stack_a->tab_a, stack_a->size_a);
+	add_top(stack_b, stack_a->tab[0]);
+	remove_top(stack_a);
 }
