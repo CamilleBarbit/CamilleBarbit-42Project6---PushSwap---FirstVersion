@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:20:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 10:29:25 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:06:55 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,25 @@ void	sa(t_a *stack_a)
 {
 	int tempo;
 
-	if (stack_a->size_a <= 1)
+	if (stack_a->size <= 1)
 		return ;
-	tempo = stack_a->tab_a[0];
-	stack_a->tab_a[0] = stack_a->tab_a[1];
-	stack_a->tab_a[1] = tempo;
+	tempo = stack_a->tab[0];
+	stack_a->tab[0] = stack_a->tab[1];
+	stack_a->tab[1] = tempo;
 }
 
-void	sb(t_b *stack_b)
+void	sb(t_a *stack_b)
 {
 	int tempo;
 
-	if (stack_b->size_b <= 1)
+	if (stack_b->size <= 1)
 		return ;
-	tempo = stack_b->tab_b[0];
-	stack_b->tab_b[0] = stack_b->tab_b[1];
-	stack_b->tab_b[1] = tempo;
+	tempo = stack_b->tab[0];
+	stack_b->tab[0] = stack_b->tab[1];
+	stack_b->tab[1] = tempo;
 }
 
-void	ss(t_a *stack_a, t_b *stack_b)
+void	ss(t_a *stack_a, t_a *stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
