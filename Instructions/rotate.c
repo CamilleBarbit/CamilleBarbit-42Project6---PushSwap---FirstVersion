@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 19:24:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 14:33:16 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 14:36:37 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rotate(t_a *stack)
 
 void	ra(t_a *stack_a)
 {
-	rotate(stack_b);
+	rotate(stack_a);
 }
 
 void	rb(t_a *stack_b)
