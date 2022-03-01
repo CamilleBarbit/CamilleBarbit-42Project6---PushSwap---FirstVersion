@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:50:58 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 10:27:11 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 11:24:02 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,11 @@ struct s_b
 
 };
 
+/*
+FUNCTIONS
+*/
 
-
+void	add_top(int *tab, int nb, int size);
 
 
 #endif
