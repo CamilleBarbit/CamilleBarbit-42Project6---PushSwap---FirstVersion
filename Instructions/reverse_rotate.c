@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 18:51:23 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 12:34:37 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:36:08 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,10 @@ void	rrb(t_a *stack_b)
 		i++;
 	} 
 	stack_b->tab[0] = tempo2;
+}
+
+void	rrr(t_a *stack_a, t_a *stack_b)
+{
+	rra(t_a *stack_a);
+	rrb(t_a *stack_b);
 }
