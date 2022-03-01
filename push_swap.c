@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 11:57:42 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:33:34 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,10 @@ int main(int argc, char **argv)
     // if (!stack_b)
     //     return (1);
     stack_a->tab = malloc(sizeof(int) * 3);
-    stack_a->tab[0] = 0;
-    stack_a->tab[1] = 1;
+    stack_a->tab[0] = 4 ;
+    stack_a->tab[1] = 5;
     stack_a->tab[2] = 2;
     stack_a->size = 3;
-    printf("%d\n", stack_a->size);
-    remove_top(stack_a);
-    printf("%d\n", stack_a->size);
+    rra(stack_a);
     
 }
