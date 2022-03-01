@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:01:31 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/28 18:56:35 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 10:51:57 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	add_top(int *tab, int nb, int size)
 		tempo1 = tab[i + 1];
 		tab[i + 1] = tempo2;
 		i++;
-	}
+	} 
 	tab[0] = nb;
-	size += 1;  
+	size += 1;
 }
 
 void	remove_top(int *tab, int size)
