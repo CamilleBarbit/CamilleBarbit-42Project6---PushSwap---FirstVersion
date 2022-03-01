@@ -6,15 +6,31 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 10:25:19 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 11:57:42 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int main(int argc, char **argv)
 {
     t_a	*stack_a;
-    t_b	*stack_b;
+    //t_a	*stack_b;
+    int nb = 2;
     
     stack_a = malloc(sizeof(t_a));
-	stack_b = malloc(sizeof(t_b));
+    if (!stack_a)
+        return (1);
+	// stack_b = malloc(sizeof(t_a));
+    // if (!stack_b)
+    //     return (1);
+    stack_a->tab = malloc(sizeof(int) * 3);
+    stack_a->tab[0] = 0;
+    stack_a->tab[1] = 1;
+    stack_a->tab[2] = 2;
+    stack_a->size = 3;
+    printf("%d\n", stack_a->size);
+    remove_top(stack_a);
+    printf("%d\n", stack_a->size);
+    
 }
