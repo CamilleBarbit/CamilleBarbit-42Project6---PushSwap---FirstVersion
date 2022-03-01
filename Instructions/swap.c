@@ -6,36 +6,62 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:20:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/02/28 18:56:05 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 10:29:25 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <stdio.h>
 
-void	sa(t_a stack_a)
+// void	test(int *tab, int size)
+// {
+// 	int	tempo;
+// 	if (size < 1)
+// 		return ;
+// 	tempo = tab[0];
+// 	tab[0] = tab[1];
+// 	tab[1] = tempo;
+// }
+
+void	sa(t_a *stack_a)
 {
 	int tempo;
 
 	if (stack_a->size_a <= 1)
 		return ;
-	temp = stack_a->tab_a[0];
+	tempo = stack_a->tab_a[0];
 	stack_a->tab_a[0] = stack_a->tab_a[1];
 	stack_a->tab_a[1] = tempo;
 }
 
-void	sb(t_b stack_b)
+void	sb(t_b *stack_b)
 {
 	int tempo;
 
-	if (stack_b->size_a <= 1)
+	if (stack_b->size_b <= 1)
 		return ;
-	temp = stack_b->tab_b[0];
+	tempo = stack_b->tab_b[0];
 	stack_b->tab_b[0] = stack_b->tab_b[1];
-	stack_a->tab_b[1] = tempo;
+	stack_b->tab_b[1] = tempo;
 }
 
-void	ss(t_a stack_a, t_b stack_b)
+void	ss(t_a *stack_a, t_b *stack_b)
 {
 	sa(stack_a);
 	sb(stack_b);
 }
+
+
+// int	main()
+// {
+// 	int	tab[5] = {0, 4, 7, 8, 9};
+// 	int	i = 0;
+// 	int size = 5;
+
+// 	test(tab, size);
+// 	while (i < size)
+// 	{
+// 		printf("%d\n", tab[i]);
+// 		i++;
+// 	}
+// }
