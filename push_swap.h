@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:50:58 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 12:07:31 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:36:42 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ LIBRARIES
 #include "./libft/libft.h"
 
 /*
-STRUCTURES
+STRUCTURE
 */
 
 typedef struct s_a	t_a;
@@ -46,6 +46,7 @@ void	rr(t_a *stack_a, t_a *stack_b);
 void	sa(t_a *stack_a);
 void	sb(t_a *stack_b);
 void	ss(t_a *stack_a, t_a *stack_b);
-
+void	rra(t_a *stack_a);
+void	rrb(t_a *stack_b);
 
 #endif
