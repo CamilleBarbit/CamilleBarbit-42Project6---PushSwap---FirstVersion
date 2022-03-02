@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:43:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 09:55:58 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 10:18:44 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	check_overflow(char *str1)
 
 	nb = ft_atoi(str1);
 	str2 = ft_itoa(nb);
-	
-
+	if (ft_strcmp(str1, str2) != 0)
+		return (write(2, "Error\n", 6), 1);
+	return (0);
 }
