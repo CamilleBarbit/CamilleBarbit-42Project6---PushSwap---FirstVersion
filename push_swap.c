@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 18:19:54 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 18:48:56 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_all_args(char **argv, int argc)
 			return (1);
 		if (check_overflow(argv[i]) == 1)
 			return (1);
-		if (compare_each_value(argv, i, argc) == 1)
+		if (compare_each_value(argv, i) == 1)
 			return (1);
 	}
 	return (0);
