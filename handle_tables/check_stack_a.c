@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 20:16:57 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/02 20:31:24 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/02 20:32:57 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ int	check_if_in_order(t_a *stack_a)
 	j = i + 1;
 	while (j < stack_a->size)
 	{
-		if (tab[i] > tab[j])
+		if (stack_a->tab[i] > stack_a->tab[j])
 			return(1);
 		i++;
 		j++;
 		
 	}
+	return (0);
 }
