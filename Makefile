@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
+#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/02 15:23:12 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/02 20:37:44 by camillebarb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ C_FILES = errors/args_are_valid.c \
 			errors/handle_overflow.c \
 			errors/compare_args_values.c \
 			handle_tables/init_tables.c \
+			handle_tables/check_stack_a.c \
 			instructions/push.c \
 			instructions/reverse_rotate.c \
 			instructions/rotate.c \
