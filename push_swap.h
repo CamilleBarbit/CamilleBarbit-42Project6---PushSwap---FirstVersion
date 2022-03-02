@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 15:50:58 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 12:37:56 by cbarbit          ###   ########.fr       */
+/*   Created: 2022/03/02 14:32:49 by cbarbit           #+#    #+#             */
+/*   Updated: 2022/03/02 15:02:43 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ struct s_a
 {
 	int	size
 	int *tab;
+    int nb;
 };
 
 /*
@@ -51,12 +52,7 @@ void	init_struct(t_a *stack_a, t_a *stack_b, int argc);
 void	fill_stack_a(t_a *stack_a, char *str);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
-
-
-
-
-
-
-
-
+int	    check_all_args(char *str);
+int	    ft_strcmp(char *s1, char *s2);
+int     compare_each_value(char **str);
 #endif
