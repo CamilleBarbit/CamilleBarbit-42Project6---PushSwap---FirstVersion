@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 18:20:26 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 18:48:41 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);
 int		ft_strcmp(char *s1, char *s2);
-int 	compare_each_value(char **argv, int i, int argc);
+int		compare_each_value(char **argv, int i);
 
 #endif
