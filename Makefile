@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/02 14:26:50 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/02 15:23:12 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,13 +32,13 @@ LIBFT_PATH = libft/libft.a
 
 C_FILES = errors/args_are_valid.c \
 			errors/handle_overflow.c \
+			errors/compare_args_values.c \
 			handle_tables/init_tables.c \
 			instructions/push.c \
 			instructions/reverse_rotate.c \
 			instructions/rotate.c \
 			instructions/swap.c \
 			push_swap.c \
-			push_swap.h \
 
 
 O_FILES = ${C_FILES:.c=.o}
@@ -66,3 +66,7 @@ fclean: clean
 	@${RM} ${NAME} ${PRINTF_A} ${LIBFT_A}
 	@cd ${PRINTF_DIRECTORY} && ${MAKE} $@
 	@cd ${LIBFT_DIRECTORY} && ${MAKE} $@
+
+re: fclean all
+
+.PHONY: all clean fclean re
