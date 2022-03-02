@@ -6,13 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 10:35:53 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 11:40:49 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 11:46:02 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_stacks(t_a *stack, int argc)
+void	init_struct(t_a *stack, int argc)
 {
 	stack->size_a = argc - 1;
 	stack->size_b = argc - 1;
