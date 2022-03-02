@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 12:29:24 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 12:36:47 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 			return (1);
 		stack_b = malloc(sizeof(t_a));
 		if (!stack_b)
-			return (1);
+			return (free(stack_a), 1);
 		init_struct(stack_a, argc);
 		i = 1;
 		while (i < argc)
