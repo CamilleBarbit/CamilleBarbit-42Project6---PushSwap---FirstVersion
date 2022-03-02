@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 10:35:53 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 12:34:58 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 12:37:50 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_struct(t_a *stack_a, t_a *stack_b, int argc)
 	stack_b->tab = NULL;
 }
 
-void	fill_stack_a(t_a *stack, char *str)
+void	fill_stack_a(t_a *stack_a, char *str)
 {
 	int			nb;
 	static int	i = 0;
