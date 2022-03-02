@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 09:55:16 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 14:34:31 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 15:26:43 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	arg_is_valid(char *str)
 	while (str[i])
 	{
 		if (arg_is_digit(str[i]) == 1)
-			return (write(2, "Error\n", 6), 1);
+			return (1);
 		i++;
 	}
 	return (0);
