@@ -6,9 +6,11 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:41:12 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 15:05:48 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 15:24:29 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int compare_each_value(char **str)
 {
@@ -22,7 +24,7 @@ int compare_each_value(char **str)
 		while (str[i])
 		{
 			if (ft_strcmp(str[i], str[j]) == 0)
-				return (write(2, "Error\n", 6) 1);
+				return (write(2, "Error\n", 6), 1);
 			j++;
 		}
 		i++;
