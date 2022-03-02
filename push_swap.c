@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 11:42:37 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 11:43:01 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 		i = 1;
 		while (i < argc)
 			fill_tab_a(stack, argv[i++]);
-		// free(stack_a);
+		// free(stack);
 	}
 	return (0);
 }
