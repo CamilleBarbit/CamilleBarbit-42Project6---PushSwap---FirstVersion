@@ -6,18 +6,25 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 14:23:13 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 15:06:07 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_all_args(char *str)
+int	check_all_args(char **argv, int argc)
 {
-	if (arg_is_valid(str) == 1)
-		return (write(2, "Error\n", 6), 1);
-	if (check_overflow(str) == 1)
-		return (write(2, "Error\n", 6), 1);
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (arg_is_valid(argv[i]) == 1)
+			return (write(2, "Error\n", 6), 1);
+		if (check_overflow(argv[i]) == 1)
+			return (write(2, "Error\n", 6), 1);
+	}
+	if (compare_args_values(argv) == )
 	return (0);
 }
 
@@ -30,9 +37,8 @@ int main(int argc, char **argv)
 	i = 1;
 	if (argc > 1)
 	{
-		while (i < argc)
-			if (check_all_args(argv[i++]) == 1)
-				return (1);
+		if (check_all_args(argv[i++]) == 1)
+			return (1);
 		stack_a = malloc(sizeof(t_a));
 		if (!stack_a)
 			return (1);
