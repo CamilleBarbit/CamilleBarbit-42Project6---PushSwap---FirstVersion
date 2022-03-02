@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 15:31:45 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 18:19:54 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	check_all_args(char **argv, int argc)
 			return (1);
 		if (check_overflow(argv[i]) == 1)
 			return (1);
+		if (compare_each_value(argv, i, argc) == 1)
+			return (1);
 	}
-	if (compare_each_value(argv, argc) == 0)
-		return (1);
 	return (0);
 }
 
@@ -33,9 +33,7 @@ int main(int argc, char **argv)
 {
 	t_a	*stack_a;
 	t_a *stack_b;
-	int	i;
 
-	i = 1;
 	if (argc > 1)
 	{
 		if (check_all_args(argv, argc) == 1)
@@ -47,9 +45,7 @@ int main(int argc, char **argv)
 		if (!stack_b)
 			return (free(stack_a), 1);
 		init_struct(stack_a, stack_b, argc);
-		i = 1;
-		while (i < argc)
-			fill_stack_a(stack_a, argv[i++]);
+		fill_stack_a(stack_a, argv);
 		// free(stack);
 	}
 	return (0);
