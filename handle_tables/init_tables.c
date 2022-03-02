@@ -6,35 +6,35 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 10:35:53 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 11:27:31 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 11:40:49 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_stacks(t_a *stack_a, t_a *stack_b, int argc)
+void	init_stacks(t_a *stack, int argc)
 {
-	stack_a->size = argc - 1;
-	stack_b->size = argc - 1;
-	stack_a->tab = malloc(sizeof(int) * size);
-	if (!stack_a->tab)
+	stack->size_a = argc - 1;
+	stack->size_b = argc - 1;
+	stack->tab_a = malloc(sizeof(int) * size);
+	if (!stack->tab_a)
 		return ;
-	stack_a->tab = NULL;
-	stack_b->tab = malloc(sizeof(int) * size);
-	if (!stack_b->tab)
+	stack->tab_a = NULL;
+	stack->tab_b = malloc(sizeof(int) * size);
+	if (!stack->tab_b)
 	{
-		free(stack_a->tab);
+		free(stack->tab_a);
 		return ;
 	}
-	stack_b = NULL;
+	stack->tab_b = NULL;
 }
 
-void	fill_stack_a(t_a *stack_a, char *str)
+void	fill_tab_a(t_a *stack, char *str)
 {
 	int			nb;
 	static int	i = 0;
 
 	nb = ft_atoi(str);
-	while (i < stack_a->size)
-		stack_a->tab[i++] = nb;
+	while (i < stack->size_a)
+		stack->tab_a[i++] = nb;
 }
