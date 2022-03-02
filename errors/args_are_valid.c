@@ -6,13 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 09:55:16 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 10:25:25 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 11:47:37 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	arg_is_digit(char a)
+static int	arg_is_digit(char a)
 {
 	if (!(a >= '0' && a <= '9'))
 		return (1);

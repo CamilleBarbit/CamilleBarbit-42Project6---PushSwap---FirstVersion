@@ -6,13 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:43:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 10:18:44 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 11:47:19 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
+static int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
