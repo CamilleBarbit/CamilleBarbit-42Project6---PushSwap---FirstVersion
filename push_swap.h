@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:32:49 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 15:07:19 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 15:10:12 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ STRUCTURE
 typedef struct s_a	t_a;
 struct s_a
 {
-	int	size
+	int	size;
 	int *tab;
 };
 
