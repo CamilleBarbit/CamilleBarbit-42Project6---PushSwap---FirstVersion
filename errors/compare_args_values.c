@@ -6,29 +6,33 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 14:41:12 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 15:32:21 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 18:10:05 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int compare_each_value(char **str, int size)
+int	compare_each_value(char **argv, int i, int argc)
 {
-	int i;
-	int j;
+	int	j;
 
-	i = 1;
 	j = 2;
-	while (j < size)
+	if (i == 1)
 	{
-		j = i + 1;
-		while (str[i])
-		{
-			if (ft_strcmp(str[i], str[j]) == 0)
+		while (j < argc)
+			if (ft_strcmp(argv[i], argv[j++]) == 0)
 				return (1);
-			j++;
-		}
-		i++;
+	}
+	j = 0;
+	if (i > 1)
+	{
+		while (j < i)
+			if (ft_strcmp(argv[i], argv[j++]) == 0)
+				return (1);
+		i = j;
+		while (j < argc)
+			if (ft_strcmp(argv[i], argv[j]) == 0)
+				return (1);
 	}
 	return (0);
 }
