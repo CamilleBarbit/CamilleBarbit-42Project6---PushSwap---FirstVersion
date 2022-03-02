@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 18:48:41 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 20:36:19 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);
 int		ft_strcmp(char *s1, char *s2);
 int		compare_each_value(char **argv, int i);
+int		check_if_in_order(t_a *stack_a);
 
 #endif
