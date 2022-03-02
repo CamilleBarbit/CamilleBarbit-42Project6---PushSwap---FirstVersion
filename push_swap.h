@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 15:50:58 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 11:38:30 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 11:48:03 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,16 @@ void	sb(t_a *stack_b);
 void	ss(t_a *stack_a, t_a *stack_b);
 void	rra(t_a *stack_a);
 void	rrb(t_a *stack_b);
+void	init_struct(t_a *stack, int argc);
+void	fill_tab_a(t_a *stack, char *str);
+int		arg_is_valid(char *str);
+int		check_overflow(char *str1);
+
+
+
+
+
+
+
 
 #endif
