@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 11:43:01 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/02 11:46:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		stack = malloc(sizeof(t_a));
 		if (!stack)
 			return (1);
-		init_stacks(stack, argc);
+		init_struct(stack, argc);
 		i = 1;
 		while (i < argc)
 			fill_tab_a(stack, argv[i++]);
