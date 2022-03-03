@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 10:35:53 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/02 18:19:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/03 17:19:19 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ void	fill_stack_a(t_a *stack_a, char **argv)
 {
 	int		nb;
 	int		i;
-	
+	int		j;
+
 	i = 1;
-	while (i < stack_a->size)
+	j = 0;
+	while (j < stack_a->size)
 	{
 		nb = ft_atoi(argv[i]);
-		stack_a->tab[i++] = nb;
+		stack_a->tab[j++] = nb;
 	}
 }
