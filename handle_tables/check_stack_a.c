@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_stack_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 20:16:57 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/03 08:37:06 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/03 17:43:55 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//I check if it is in order only if argc > 3
+//I check if it is in order only if argc > 2
 int	check_if_in_order(t_a *stack_a)
 {
 	int	i;
@@ -26,7 +26,7 @@ int	check_if_in_order(t_a *stack_a)
 			return (0);
 		i++;
 		j++;
-		
+
 	}
 	return (1);
 }
