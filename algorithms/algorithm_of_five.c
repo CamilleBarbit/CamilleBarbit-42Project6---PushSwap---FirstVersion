@@ -6,11 +6,21 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:10:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 19:36:54 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 19:47:42 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+
+static void	show_tab(t_a *stack)
+{
+	int i;
+
+	i = 0;
+	while (i < stack-> size)
+		printf("%d\n", stack->tab[i++]);
+}
 
 void	push_min(t_a *stack_a, t_a *stack_b, int min)
 {
@@ -23,12 +33,16 @@ void	push_min(t_a *stack_a, t_a *stack_b, int min)
 		}
 		pb(stack_a, stack_b);
 	}
-	else if (min > 0)
+	else
 	{
-		ra(stack_a);
-		min--;
+		while (min > 0)
+		{
+			ra(stack_a);
+			min--;
+		}
+		pb(stack_a, stack_b);
 	}
-	pb(stack_a, stack_b);
+	 
 }
 
 int	look_for_smallest_num(t_a *stack_a)
@@ -53,8 +67,16 @@ int	look_for_smallest_num(t_a *stack_a)
 }
 
 
-void	sort_five(t_a *stack_a, t_a *stack b)
+void	sort_five(t_a *stack_a, t_a *stack_b)
 {
+	int	j;
+
+	j = look_for_smallest_num(stack_a);
+	push_min(stack_a, stack_b, j);
+	printf("TAB A\n");
+	show_tab(stack_a);
+	printf("TAB B\n");
+	show_tab(stack_b);
 		
 }
 
