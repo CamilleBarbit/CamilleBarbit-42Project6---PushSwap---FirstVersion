@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 16:48:53 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 19:19:11 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int main(int argc, char **argv)
 {
 	t_a	*stack_a = NULL;
 	t_a *stack_b = NULL;
+	int i;
 
 	if (argc == 2) //PARSING OK
 	{
@@ -66,7 +67,13 @@ int main(int argc, char **argv)
 			return (free(stack_a), free(stack_b), printf("ERROR\nOverflowOrDouble"), 1);
 		show_tab(stack_a);
 		if (stack_a->size > 1)
-			sort_three(stack_a);
+		{
+			if (check_if_in_order(stack_a) == 0)
+				sort_three(stack_a);
+			// else
+			// 	free(TOUT);
+		}
+			
 	}
 	if (argc > 2) //PARSING OK
 	{
@@ -81,9 +88,12 @@ int main(int argc, char **argv)
 		init_struct(stack_a, stack_b, argc - 1);
 		fill_stack_a(stack_a, argv, 1);
 		show_tab(stack_a);
-		sort_three(stack_a);
-		// if (check_if_in_order(stack_a) == 1)
-		// 	return (write(2, "Error\n", 6), 1);
+		i = look_for_smallest_num(stack_a);
+		printf("POSITION minimum : %d\n", i);
+		//if (check_if_in_order(stack_a) == 0)
+				// sort_three(stack_a);
+		// else
+		// 	return (1);
 		// free(stack);
 	}
 	return (0);
