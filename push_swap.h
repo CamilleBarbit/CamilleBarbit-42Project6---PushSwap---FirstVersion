@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 19:36:19 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 19:41:20 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	init_struct(t_a *stack_a, t_a *stack_b, int size);
 void	fill_stack_a(t_a *stack_a, char **str, int i);
 void	push_min(t_a *stack_a, t_a *stack_b, int min);
 void	sort_three(t_a *stack_a);
+void	sort_five(t_a *stack_a, t_a *stack_b);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);

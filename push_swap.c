@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 19:19:11 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 19:40:56 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int main(int argc, char **argv)
 {
 	t_a	*stack_a = NULL;
 	t_a *stack_b = NULL;
-	int i;
 
 	if (argc == 2) //PARSING OK
 	{
@@ -88,8 +87,7 @@ int main(int argc, char **argv)
 		init_struct(stack_a, stack_b, argc - 1);
 		fill_stack_a(stack_a, argv, 1);
 		show_tab(stack_a);
-		i = look_for_smallest_num(stack_a);
-		printf("POSITION minimum : %d\n", i);
+		sort_five(stack_a, stack_b);
 		//if (check_if_in_order(stack_a) == 0)
 				// sort_three(stack_a);
 		// else
