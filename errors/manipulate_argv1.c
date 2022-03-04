@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:38:14 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 14:25:02 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 14:54:46 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_count_words(char const *string, char a)
 	return (count);
 }
 
-int	check_first_arg(char *str)
+int	check_first_arg(char *str, t_a *stack_a, t_a *stack_b)
 {
 	char	**tab_args;
 	int		len;
@@ -47,5 +47,8 @@ int	check_first_arg(char *str)
 			return (free(tab_args), 1);
 		i++;
 	}
+	init_struct(stack_a, stack_b, len);
+	fill_stack_a(stack_a, tab_args, 0);
+	free(tab_args);
 	return (0);
 }
