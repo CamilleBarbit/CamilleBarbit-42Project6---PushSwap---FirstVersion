@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/04 14:28:45 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/04 16:25:30 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,13 +35,14 @@ C_FILES = errors/args_are_valid.c \
 			errors/compare_args_values.c \
 			errors/argv1_is_valid.c \
 			errors/manipulate_argv1.c \
-			handle_tables/init_tables.c \
+			handle_tables/init.c \
 			handle_tables/check_stack_a.c \
 			instructions/push.c \
 			instructions/reverse_rotate.c \
 			instructions/rotate.c \
 			instructions/swap.c \
 			push_swap.c \
+			algorithms/algorithm_of_three.c \
 
 
 O_FILES = ${C_FILES:.c=.o}
