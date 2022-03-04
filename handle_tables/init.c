@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 10:35:53 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 14:59:16 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 15:22:58 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,17 @@ void	init_struct(t_a *stack_a, t_a *stack_b, int size)
 	stack_a->tab = malloc(sizeof(int) * stack_a->size);
 	if (!stack_a->tab)
 		return ;
-	stack_a->tab = NULL;
 	stack_b->tab = malloc(sizeof(int) * stack_b->size);
 	if (!stack_b->tab)
 	{
 		free(stack_a->tab);
 		return ;
 	}
-	stack_b->tab = NULL;
 }
 
 void	fill_stack_a(t_a *stack_a, char **str, int i)
 {
 	int		nb;
-	int		i;
 	int		j;
 
 	j = 0;
