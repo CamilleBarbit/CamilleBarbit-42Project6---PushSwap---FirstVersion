@@ -6,13 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:22:26 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 12:24:56 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 12:26:47 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	arg_is_digit(char *str, int i)
+static int	argv1_is_digit(char *str, int i)
 {
 	if (str[i] >= '0' && str[i] <= '9')
 		return (0);
@@ -34,7 +34,7 @@ static int	arg_is_only_space(char *str)
 	return (1);
 }
 
-int	arg_is_valid(char *str)
+int	argv1_is_valid(char *str)
 {
 	int	i;
 
