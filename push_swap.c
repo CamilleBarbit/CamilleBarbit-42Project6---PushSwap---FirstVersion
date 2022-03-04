@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 14:57:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 15:26:29 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ int	check_all_args(char **argv, int argc)
 	}
 	return (0);
 }
+
+static void	show_tab(t_a *stack_a)
+{
+	int i;
+
+	i = 0;
+	while (i < stack_a-> size)
+		printf("%d\n", stack_a->tab[i++]);
+}
+
 
 int main(int argc, char **argv)
 {
@@ -61,6 +71,7 @@ int main(int argc, char **argv)
 			return (free(stack_a), 1);
 		init_struct(stack_a, stack_b, argc - 1);
 		fill_stack_a(stack_a, argv, 1);
+		show_tab(stack_a);
 		// if (check_if_in_order(stack_a) == 1)
 		// 	return (write(2, "Error\n", 6), 1);
 		// free(stack);
