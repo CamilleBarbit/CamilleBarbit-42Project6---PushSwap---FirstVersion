@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:01:31 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/01 14:32:14 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 16:37:42 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	pa(t_a *stack_a, t_a *stack_b)
 		return ;
 	add_top(stack_a, stack_b->tab[0]);
 	remove_top(stack_b);
+	ft_printf("pa\n");
 }
 
 void	pb(t_a *stack_a, t_a *stack_b)
@@ -63,4 +64,5 @@ void	pb(t_a *stack_a, t_a *stack_b)
 		return ;
 	add_top(stack_b, stack_a->tab[0]);
 	remove_top(stack_a);
+	ft_printf("pb\n");
 }
