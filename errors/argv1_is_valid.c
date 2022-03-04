@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:22:26 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 12:26:47 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 14:05:05 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ static int	arg_is_only_space(char *str)
 	return (1);
 }
 
-int	argv1_is_valid(char *str)
+int	argv1_is_valid(char **str)
 {
 	int	i;
 
 	i = 0;
-	if (arg_is_only_space(str) == 1)
+	if (arg_is_only_space(str[1]) == 1)
 		return (1);
-	if (str[0] == '-')
+	if (str[1][i] == '-')
 		i++;
-	while (str[i])
+	while (str[1][i])
 	{
-		if (arg_is_digit(str, i) == 1)
+		if (argv1_is_digit(str[1], i) == 1)
 			return (1);
 		i++;
 	}
