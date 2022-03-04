@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/04 16:25:30 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/04 18:06:15 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ C_FILES = errors/args_are_valid.c \
 			instructions/swap.c \
 			push_swap.c \
 			algorithms/algorithm_of_three.c \
+			algorithms/algorithm_of_five.c \
 
 
 O_FILES = ${C_FILES:.c=.o}
