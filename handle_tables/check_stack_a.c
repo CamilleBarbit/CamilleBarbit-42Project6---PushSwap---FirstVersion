@@ -6,13 +6,12 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 20:16:57 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/04 16:40:20 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 17:02:11 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//I check if it is in order only if argc > 2
 int	check_if_in_order(t_a *stack_a)
 {
 	int	i;
