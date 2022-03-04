@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:38:14 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 14:54:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 15:10:56 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,5 @@ int	check_first_arg(char *str, t_a *stack_a, t_a *stack_b)
 	free(tab_args);
 	return (0);
 }
+
+//Que dois-je faire si au final je n'ai qu'un nombre dans mon argv1?
