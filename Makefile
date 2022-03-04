@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
+#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/02 20:37:44 by camillebarb      ###   ########.fr        #
+#    Updated: 2022/03/04 14:28:45 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,8 @@ LIBFT_PATH = libft/libft.a
 C_FILES = errors/args_are_valid.c \
 			errors/handle_overflow.c \
 			errors/compare_args_values.c \
+			errors/argv1_is_valid.c \
+			errors/manipulate_argv1.c \
 			handle_tables/init_tables.c \
 			handle_tables/check_stack_a.c \
 			instructions/push.c \
