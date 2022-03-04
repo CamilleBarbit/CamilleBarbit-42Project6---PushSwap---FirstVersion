@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:38:14 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/04 12:44:07 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/04 14:25:02 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,16 @@ int	check_first_arg(char *str)
 	int		len;
 	int		i;
 
-	tab_args = ft_split(str,' '); //mon argument est sous la forme d'un double tableau
-	len = ft_count_words(str , ' '); //je connais la taille de mon tableau
+	tab_args = ft_split(str,' ');
+	len = ft_count_words(str , ' ');
 	i = 0;
 	while (i < len)
 	{
-		
+		if (check_overflow(tab_args[i]) == 1)
+			return (free(tab_args), 1);
+		if (compare_each_value(tab_args, i, len) == 1)
+			return (free(tab_args), 1);
+		i++;
 	}
-	
+	return (0);
 }
