@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/07 18:14:33 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/07 18:17:25 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	print_tab(int *tab, int size)
 Function to place the minimum on top: STEP 1
 */
 
-void	place_in_on_top(t_a *stack_a, int min)
+void	place_it_on_top(t_a *stack_a, int min)
 {
 	if (min > stack_a->size / 2)
 	{
@@ -52,30 +52,8 @@ void	place_in_on_top(t_a *stack_a, int min)
 }
 
 /*
-FUNCTION TO FIND LIS
+FUNCTION TO FIND LIS LENGTH
 */
-
-// int	find_lis_length(int *tmp, t_a *stack_a)
-// {
-// 	int	lis[stack_a->size];
-// 	int	i;
-// 	int	j;
-
-// 	lis[0] = 1;
-// 	i = 1;
-// 	j = 0;
-// 	while(i < stack_a->size)
-// 	{
-// 		lis[i] = 1;
-// 		j = i - 1;
-// 		while(j < i)
-// 		{
-// 			if (stack_a->tab[i] > stack_a->tab[j] && lis[i] < lis[j] + 1])
-// 				lis[i]= lis[j] + 1;
-// 		i++;
-// 	}
-// }
-
 int	lis_length(int *tmp, t_a *stack_a)
 {
 	int	lis_len;
