@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/07 16:22:19 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/07 18:14:33 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	print_tab(int *tab, int size)
 	i = 0;
 	while (i < size)
 	{
-		printf("TABLEAU: %d\n", tab[i++]);
+		printf("%d\n", tab[i++]);
 	}
 }
 
@@ -76,58 +76,39 @@ FUNCTION TO FIND LIS
 // 	}
 // }
 
-int	look_for_biggest_lis(int *tab, t_a *stack_a)
+int	lis_length(int *tmp, t_a *stack_a)
 {
+	int	lis_len;
 	int	i;
+	int	lis_tab[stack_a->size];
 	int	j;
-	int	tmp;
 
 	i = 0;
-	tmp = tab[0];
 	j = 0;
+	lis_len = 0;
+	//Initialize lis_tab with only 1s
 	while (i < stack_a->size)
+		lis_tab[i++] = 1;
+	printf("TAB LIS:\n");
+	print_tab(lis_tab, stack_a->size);
+	i = 1;
+	while (i++ < stack_a->size)
 	{
-		if (tmp < tab[i])
+		while (j++ < i)
 		{
-			tmp = tab[i];
-			j = i;
+			if (tmp[i] > tmp[j] && lis_tab[i] < lis_tab[j] + 1)
+				lis_tab[i] = lis_tab[j] + 1;
 		}
-		i++;
+		j = 0;
 	}
-	printf("INDICE DE LA LIS: %d", j);
-	return (j);
-}
-
-static int	test_lis(int *tmp, t_a *stack_a)
-{
-	int	i;
-	int	j;
-	int	tab_lis[stack_a->size];
-	int	lis;
-	int	max_lis;
-	int	k;
-
 	i = 0;
-	j = 1;
-	lis = 1;
-	k = 0;
-	while (i < stack_a->size)
+	while(i++ < stack_a->size)
 	{
-		lis = 1;
-		while(j < stack_a->size)
-		{
-			if (tmp[j] > tmp[i])
-			{
-				lis++;
-				i++;
-			}
-			j++;
-		}
-		tab_lis[k++] = lis;
-		i++;
+		if (lis_len < lis_tab[i])
+			lis_len = lis_tab[i];
 	}
-	max_lis = look_for_biggest_lis(tab_lis, stack_a);
-	return (max_lis);
+	printf("LEN_LIS: %d\n", lis_len);
+	return (lis_len);
 }
 
 /*
@@ -150,7 +131,9 @@ void	whatever(t_a *stack_a)
 	 	tmp[k++] = stack_a->tab[i++];
 	//print_tab(stack_a->tab, 10);
 	// printf("\n\n\n");
-	print_tab(tmp, 10);
-	test_lis(tmp, stack_a);
+	//print_tab(tmp, 10);
+	printf("TAB TEMP:\n");
+	print_tab(tmp, stack_a->size);
+	lis_length(tmp, stack_a);
 
 }
