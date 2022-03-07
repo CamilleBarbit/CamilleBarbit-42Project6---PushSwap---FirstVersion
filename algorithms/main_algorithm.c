@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/07 18:17:25 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/07 18:40:23 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ FUNCTION TO FIND LIS LENGTH
 */
 int	lis_length(int *tmp, t_a *stack_a)
 {
-	int	lis_len;
+	int	lis_max;
 	int	i;
 	int	lis_tab[stack_a->size];
 	int	j;
 
 	i = 0;
 	j = 0;
-	lis_len = 0;
+	lis_max = 0;
 	//Initialize lis_tab with only 1s
 	while (i < stack_a->size)
 		lis_tab[i++] = 1;
@@ -79,14 +79,17 @@ int	lis_length(int *tmp, t_a *stack_a)
 		}
 		j = 0;
 	}
+	//Il faudrait envoyer la suite dans une fonction pour recuperer l'indice de lis_max
 	i = 0;
 	while(i++ < stack_a->size)
 	{
-		if (lis_len < lis_tab[i])
-			lis_len = lis_tab[i];
+		if (lis_max < lis_tab[i])
+		{
+			lis_max = lis_tab[i];
+		}
 	}
-	printf("LEN_LIS: %d\n", lis_len);
-	return (lis_len);
+	printf("LEN_LIS: %d\n", lis_max);
+	return (lis_max);
 }
 
 /*
@@ -104,7 +107,7 @@ void	whatever(t_a *stack_a)
 	i = 0;
 	k = 0;
 	if (j != 0)
-		place_in_on_top(stack_a, j);
+		place_it_on_top(stack_a, j);
 	while (k < stack_a->size)
 	 	tmp[k++] = stack_a->tab[i++];
 	//print_tab(stack_a->tab, 10);
