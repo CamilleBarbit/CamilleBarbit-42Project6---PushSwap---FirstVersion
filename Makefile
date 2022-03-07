@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/04 18:06:15 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/07 14:49:30 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,15 @@ CFLAGS = -Wall -Wextra -Werror
 
 PRINTF_DIRECTORY = ft_printf
 
-PRINTF_A = libftprintf.a 
+PRINTF_A = libftprintf.a
 
 PRINTF_PATH = ft_printf/libftprintf.a
 
-LIBFT_DIRECTORY = libft 
+LIBFT_DIRECTORY = libft
 
-LIBFT_A = libft.a 
+LIBFT_A = libft.a
 
-LIBFT_PATH = libft/libft.a 
+LIBFT_PATH = libft/libft.a
 
 C_FILES = errors/args_are_valid.c \
 			errors/handle_overflow.c \
@@ -44,6 +44,7 @@ C_FILES = errors/args_are_valid.c \
 			push_swap.c \
 			algorithms/algorithm_of_three.c \
 			algorithms/algorithm_of_five.c \
+			algorithms/main_algorithm.c \
 
 
 O_FILES = ${C_FILES:.c=.o}
@@ -54,7 +55,7 @@ all: ${NAME}
 	@${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} : ${O_FILES} ${PRINTF_A} ${LIBFT_A}
-	@${CC} ${O_FILES} ${PRINTF_PATH} ${LIBFT_PATH} -o ${NAME} 
+	@${CC} ${O_FILES} ${PRINTF_PATH} ${LIBFT_PATH} -o ${NAME}
 
 ${PRINTF_A}:
 	@(cd ${PRINTF_DIRECTORY} && ${MAKE})
