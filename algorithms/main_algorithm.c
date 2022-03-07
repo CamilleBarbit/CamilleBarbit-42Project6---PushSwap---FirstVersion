@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/07 18:40:23 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/07 18:51:01 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,27 +67,30 @@ int	lis_length(int *tmp, t_a *stack_a)
 	//Initialize lis_tab with only 1s
 	while (i < stack_a->size)
 		lis_tab[i++] = 1;
-	printf("TAB LIS:\n");
-	print_tab(lis_tab, stack_a->size);
 	i = 1;
-	while (i++ < stack_a->size)
+	while (i < stack_a->size)
 	{
-		while (j++ < i)
+		while (j < i)
 		{
 			if (tmp[i] > tmp[j] && lis_tab[i] < lis_tab[j] + 1)
 				lis_tab[i] = lis_tab[j] + 1;
+			j++;
 		}
 		j = 0;
+		i++;
 	}
 	//Il faudrait envoyer la suite dans une fonction pour recuperer l'indice de lis_max
 	i = 0;
-	while(i++ < stack_a->size)
+	while(i < stack_a->size)
 	{
 		if (lis_max < lis_tab[i])
 		{
 			lis_max = lis_tab[i];
 		}
+		i++;
 	}
+	printf("TAB LIS:\n");
+	print_tab(lis_tab, stack_a->size);
 	printf("LEN_LIS: %d\n", lis_max);
 	return (lis_max);
 }
