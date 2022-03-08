@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/08 14:17:18 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/08 14:31:14 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,8 @@ int	find_all_lis(int *tmp, t_a *stack_a)
 	printf("TAB LIS:\n");
 	print_tab(lis_tab, stack_a->size);
 	printf("LEN_LIS: %d\n", lis_max);
-	//printf("INDICE SUB_SEQUENCE:\n");
-	//print_tab(sub_sequence, stack_a->size);
+	// printf("INDICE SUB_SEQUENCE:\n");
+	// print_tab(sub_sequence, stack_a->size);
 	return (lis_max);
 }
 
