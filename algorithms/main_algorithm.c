@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/07 18:51:01 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/08 12:14:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,13 @@ int	lis_length(int *tmp, t_a *stack_a)
 	int	lis_max;
 	int	i;
 	int	lis_tab[stack_a->size];
+	int	sub_sequence[stack_a->size];
 	int	j;
 
 	i = 0;
 	j = 0;
-	lis_max = 0;
-	//Initialize lis_tab with only 1s
+	lis_max = 1;
+	//Initialize lis_tab with only 1s - lis_max is 1
 	while (i < stack_a->size)
 		lis_tab[i++] = 1;
 	i = 1;
@@ -73,7 +74,10 @@ int	lis_length(int *tmp, t_a *stack_a)
 		while (j < i)
 		{
 			if (tmp[i] > tmp[j] && lis_tab[i] < lis_tab[j] + 1)
+			{
 				lis_tab[i] = lis_tab[j] + 1;
+				sub_sequence[i] = j;
+			}
 			j++;
 		}
 		j = 0;
@@ -92,6 +96,8 @@ int	lis_length(int *tmp, t_a *stack_a)
 	printf("TAB LIS:\n");
 	print_tab(lis_tab, stack_a->size);
 	printf("LEN_LIS: %d\n", lis_max);
+	printf("INDICE SUB_SEQUENCE:\n");
+	print_tab(sub_sequence, stack_a->size);
 	return (lis_max);
 }
 
