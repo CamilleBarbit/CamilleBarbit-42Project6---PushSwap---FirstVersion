@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:32:09 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 16:32:30 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 16:33:38 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,29 +58,6 @@ void	get_sub_sequence(t_a *stack_a, int lis_max, int lis_max_pos)
 	// 	printf("%d\n", stack_a->sub_sequence[k]);
 	// 	k++;
 	// }
-}
-
-/*
-STEP 1: Function to place the minimum on top of stack_a->tab
-*/
-void	place_it_on_top(t_a *stack_a, int min_pos)
-{
-	if (min_pos > stack_a->size / 2)
-	{
-		while (min_pos < stack_a->size)
-		{
-			rra(stack_a);
-			min_pos++;
-		}
-	}
-	else
-	{
-		while (min_pos > 0)
-		{
-			ra(stack_a);
-			min_pos--;
-		}
-	}
 }
 
 /*
