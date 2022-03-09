@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:32:09 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 16:33:38 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 16:38:22 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 Step 4: Function to get the position of lis_max in stack_a->lis_tab
 */
-static int	get_lis_max_pos(t_a *stack_a, int lis_max)
+int	get_lis_max_pos(t_a *stack_a, int lis_max)
 {
 	int	i;
 
