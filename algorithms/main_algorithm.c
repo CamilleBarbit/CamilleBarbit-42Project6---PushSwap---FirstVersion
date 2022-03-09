@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/08 14:31:14 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 11:51:54 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,24 @@ static void	print_tab(int *tab, int size)
 }
 
 /*
-Function to place the minimum on top: STEP 1
+STEP 1: Function to place the minimum on top of stack a
 */
-void	place_it_on_top(t_a *stack_a, int min)
+void	place_it_on_top(t_a *stack_a, int min_pos)
 {
-	if (min > stack_a->size / 2)
+	if (min_pos > stack_a->size / 2)
 	{
-		while (min < stack_a->size)
+		while (min_pos < stack_a->size)
 		{
 			rra(stack_a);
-			min++;
+			min_pos++;
 		}
 	}
 	else
 	{
-		while (min > 0)
+		while (min_pos > 0)
 		{
 			ra(stack_a);
-			min--;
+			min_pos--;
 		}
 	}
 }
@@ -52,19 +52,19 @@ void	place_it_on_top(t_a *stack_a, int min)
 /*
 FUNCTION TO SET LIS_TAB TO 1s
 */
-void	set_lis_tab_to_one(t_a *stack_a, int *lis_tab)
+void	set_lis_tab_to_one(t_a *stack_a)
 {
 	int	i;
 
 	i = 0;
 	while(i < stack_a->size)
-		lis_tab[i++] = 1;
+		stack_a->lis_tab[i++] = 1;
 }
 
 /*
 FUNCTION TO DETERMINE LIS_MAX
 */
-int	find_lis_max(t_a *stack_a, int *lis_tab)
+int	find_lis_max(t_a *stack_a)
 {
 	int	i;
 	int	lis_max;
@@ -73,8 +73,8 @@ int	find_lis_max(t_a *stack_a, int *lis_tab)
 	lis_max = 1;
 	while (i < stack_a->size)
 	{
-		if (lis_max < lis_tab[i])
-			lis_max = lis_tab[i];
+		if (lis_max < stack_a->lis_tab[i])
+			lis_max = stack_a->lis_tab[i];
 		i++;
 	}
 	return (lis_max);
@@ -82,37 +82,63 @@ int	find_lis_max(t_a *stack_a, int *lis_tab)
 /*
 FUNCTION TO FIND LIS LENGTH
 */
-int	find_all_lis(int *tmp, t_a *stack_a)
+// int	test_lis(int *tmp, t_a *stack_a)
+// {
+// 	int	lis_max;
+// 	int	i;
+// 	int	lis_tab[stack_a->size];
+// 	int	j;
+
+// 	j = 0;
+// 	lis_max = 1;
+// 	set_lis_tab_to_one(stack_a, lis_tab);
+// 	i = 1;
+// 	while (i < stack_a->size)
+// 	{
+// 		while (j < i)
+// 		{
+// 			if (tmp[i] > tmp[j] && lis_tab[i] < lis_tab[j] + 1)
+// 			{
+// 				lis_tab[i] = lis_tab[j] + 1;
+// 			}
+// 			j++;
+// 		}
+// 		j = 0;
+// 		i++;
+// 	}
+// 	lis_max = find_lis_max(stack_a, lis_tab);
+// 	//printf("TAB LIS:\n");
+// 	//print_tab(lis_tab, stack_a->size);
+// 	//printf("LEN_LIS: %d\n", lis_max);
+// 	// printf("INDICE SUB_SEQUENCE:\n");
+// 	// print_tab(sub_sequence, stack_a->size);
+// 	return (lis_max);
+// }
+
+void	test_lis(int *tmp, t_a *stack_a)
 {
-	int	lis_max;
 	int	i;
-	int	lis_tab[stack_a->size];
 	int	j;
 
 	j = 0;
-	lis_max = 1;
-	set_lis_tab_to_one(stack_a, lis_tab);
+	stack_a->lis_tab = malloc(sizeof(int) * stack_a->size);
+	if (!stack_a->lis_tab)
+		return ;
+	set_lis_tab_to_one(stack_a);
 	i = 1;
 	while (i < stack_a->size)
 	{
 		while (j < i)
 		{
-			if (tmp[i] > tmp[j] && lis_tab[i] < lis_tab[j] + 1)
+			if (tmp[i] > tmp[j] && stack_a->lis_tab[i] < stack_a->lis_tab[j] + 1)
 			{
-				lis_tab[i] = lis_tab[j] + 1;
+				stack_a->lis_tab[i] = stack_a->lis_tab[j] + 1;
 			}
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	lis_max = find_lis_max(stack_a, lis_tab);
-	printf("TAB LIS:\n");
-	print_tab(lis_tab, stack_a->size);
-	printf("LEN_LIS: %d\n", lis_max);
-	// printf("INDICE SUB_SEQUENCE:\n");
-	// print_tab(sub_sequence, stack_a->size);
-	return (lis_max);
 }
 
 /*
@@ -125,19 +151,24 @@ void	whatever(t_a *stack_a)
 	int	tmp[stack_a->size];
 	int	i;
 	int	k;
+	int	lis_max;
+	int	lis_max_pos;
 
-	j = look_for_smallest_num(stack_a);
 	i = 0;
 	k = 0;
-	if (j != 0)
+	j = look_for_smallest_num(stack_a); //je cherche le minimum dans la stack_a
+	if (j != 0) //si le minimum est ailleurs qu'a la premiere position, alors je le mets on top
 		place_it_on_top(stack_a, j);
-	while ( k < stack_a->size)
+	while (k < stack_a->size) //ensuite je copie stack a dans tmp
 		tmp[k++] = stack_a->tab[i++];
-	//print_tab(stack_a->tab, 10);
+	// printf("TAB A:\n");
+	// print_tab(stack_a->tab, 10);
 	// printf("\n\n\n");
-	//print_tab(tmp, 10);
-	printf("TAB TEMP:\n");
-	print_tab(tmp, stack_a->size);
-	find_all_lis(tmp, stack_a);
+	// printf("TAB TEMP:\n");
+	// print_tab(tmp, stack_a->size);
+	test_lis(tmp, stack_a); //Je recupere mon tableau avec touttes les lis possibles
+
+	//printf("LIS TAB:\n");
+	//print_tab(stack_a->lis_tab, stack_a->size);
 
 }
