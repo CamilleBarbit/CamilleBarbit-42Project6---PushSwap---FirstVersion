@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 16:28:32 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 16:38:33 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int		check_first_arg(char *str, t_a *stack_a, t_a *stack_b);
 int		look_for_smallest_num(t_a *stack_a);
 void	test_lis(t_a *stack_a);
 int		find_lis_max(t_a *stack_a);
+int		get_lis_max_pos(t_a *stack_a, int lis_max);
 void	whatever(t_a *stack_a);
 
 #endif
