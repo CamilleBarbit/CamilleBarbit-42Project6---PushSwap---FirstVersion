@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/07 14:49:30 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/09 16:36:28 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ C_FILES = errors/args_are_valid.c \
 			algorithms/algorithm_of_three.c \
 			algorithms/algorithm_of_five.c \
 			algorithms/main_algorithm.c \
+			algorithms/find_lis.c \
 
 
 O_FILES = ${C_FILES:.c=.o}
