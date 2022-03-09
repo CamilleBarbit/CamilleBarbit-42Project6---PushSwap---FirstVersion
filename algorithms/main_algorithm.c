@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 16:33:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 16:39:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	whatever(t_a *stack_a)
 	lis_max_pos = get_lis_max_pos(stack_a, lis_max); //J'ai le position de mon LIS_MAX
 	printf("LIS MAX: %d\n", lis_max);
 	printf("LIS MAX POSITION: %d\n", lis_max_pos);
-	get_subsequent(stack_a, lis_max, lis_max_pos);
+	get_sub_sequence(stack_a, lis_max, lis_max_pos);
 	//printf("LIS TAB:\n");
 	//print_tab(stack_a->lis_tab, stack_a->size);
 
