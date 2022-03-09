@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/08 14:04:33 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 11:28:14 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ struct s_a
 {
 	int	size;
 	int *tab;
+	int	*lis_tab;
 };
 
 /*
@@ -52,6 +53,7 @@ void	fill_stack_a(t_a *stack_a, char **str, int i);
 void	push_min(t_a *stack_a, t_a *stack_b, int min);
 void	sort_three(t_a *stack_a);
 void	sort_five(t_a *stack_a, t_a *stack_b);
+void	place_it_on_top(t_a *stack_a, int min_pos);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);
@@ -61,7 +63,7 @@ int		check_if_in_order(t_a *stack_a);
 int		argv1_is_valid(char **str);
 int		check_first_arg(char *str, t_a *stack_a, t_a *stack_b);
 int		look_for_smallest_num(t_a *stack_a);
-int		find_all_lis(int *tmp, t_a *stack_a);
+void	test_lis(int *tmp, t_a *stack_a);
 int		find_lis_max(t_a *stack_a, int *lis_tab);
 void	whatever(t_a *stack_a);
 
