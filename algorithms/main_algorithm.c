@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 11:51:54 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 12:27:15 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@ static void	print_tab(int *tab, int size)
 	{
 		printf("%d\n", tab[i++]);
 	}
+}
+
+static int	get_lis_max_pos(t_a *stack_a, int lis_max)
+{
+	int	i;
+
+	i = 0;
+	while(stack_a->lis_tab[i] && stack_a->lis_tab[i] != lis_max)
+		i++;
+	return (i);
 }
 
 /*
@@ -76,6 +86,7 @@ int	find_lis_max(t_a *stack_a)
 		if (lis_max < stack_a->lis_tab[i])
 			lis_max = stack_a->lis_tab[i];
 		i++;
+
 	}
 	return (lis_max);
 }
@@ -115,7 +126,7 @@ FUNCTION TO FIND LIS LENGTH
 // 	return (lis_max);
 // }
 
-void	test_lis(int *tmp, t_a *stack_a)
+void	test_lis(t_a *stack_a)
 {
 	int	i;
 	int	j;
@@ -130,7 +141,7 @@ void	test_lis(int *tmp, t_a *stack_a)
 	{
 		while (j < i)
 		{
-			if (tmp[i] > tmp[j] && stack_a->lis_tab[i] < stack_a->lis_tab[j] + 1)
+			if (stack_a->tab[i] > stack_a->tab[j] && stack_a->lis_tab[i] < stack_a->lis_tab[j] + 1)
 			{
 				stack_a->lis_tab[i] = stack_a->lis_tab[j] + 1;
 			}
@@ -140,7 +151,6 @@ void	test_lis(int *tmp, t_a *stack_a)
 		i++;
 	}
 }
-
 /*
 Function to find copy stack_a in tmp: STEP 2
 */
@@ -148,7 +158,6 @@ Function to find copy stack_a in tmp: STEP 2
 void	whatever(t_a *stack_a)
 {
 	int	j;
-	int	tmp[stack_a->size];
 	int	i;
 	int	k;
 	int	lis_max;
@@ -159,15 +168,16 @@ void	whatever(t_a *stack_a)
 	j = look_for_smallest_num(stack_a); //je cherche le minimum dans la stack_a
 	if (j != 0) //si le minimum est ailleurs qu'a la premiere position, alors je le mets on top
 		place_it_on_top(stack_a, j);
-	while (k < stack_a->size) //ensuite je copie stack a dans tmp
-		tmp[k++] = stack_a->tab[i++];
-	// printf("TAB A:\n");
-	// print_tab(stack_a->tab, 10);
+	printf("TAB A:\n");
+	print_tab(stack_a->tab, 10);
 	// printf("\n\n\n");
 	// printf("TAB TEMP:\n");
 	// print_tab(tmp, stack_a->size);
-	test_lis(tmp, stack_a); //Je recupere mon tableau avec touttes les lis possibles
-
+	test_lis(stack_a); //Je recupere mon tableau avec touttes les lis possibles
+	lis_max = find_lis_max(stack_a); //Je determine la longueur de ma LIS
+	lis_max_pos = get_lis_max_pos(stack_a, lis_max); //J'ai le position de mon LIS_MAX
+	printf("LIS MAX: %d\n", lis_max);
+	printf("LIS MAX POSITION: %d\n", lis_max_pos);
 	//printf("LIS TAB:\n");
 	//print_tab(stack_a->lis_tab, stack_a->size);
 
