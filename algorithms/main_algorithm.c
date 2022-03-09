@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 14:04:52 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 15:47:20 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,35 @@ static int	get_lis_max_pos(t_a *stack_a, int lis_max)
 Function to get sb_sequent_lis
 */
 
-void	get_subsequent(t_a *stack_a, int lis_max, int max_pos)
+void	get_subsequent(t_a *stack_a, int lis_max, int lis_max_pos)
 {
 	int	sub_sequent[lis_max];
 	int	i;
 	int	j;
 	int	k;
-	int	tempo;
 
 	i = lis_max_pos; //11 dans ce cas
 	k = lis_max - 1; // vaut 5 (index pour se deplacer dans sub_sequent)
-	tempo = stack_a->lis_tab[i] - stack_a->lis_tab[i - 1]; // 6 - 4 = 2
+	//j = lis_max_pos - 2; // j vaut 9
+	j = i - 1;
+	//tempo = stack_a->lis_tab[i] - stack_a->lis_tab[i - 1]; // 6 - 4 = 2
 	sub_sequent[k] = stack_a->tab[i];
-	while (lix_max < 0)
-
-
+	while (j >= 0)
+	{
+		if (stack_a->lis_tab[i] - stack_a->lis_tab[j] == 1)
+		{
+			k--;
+			sub_sequent[k] = stack_a->tab[j];
+			i = j;
+		}
+		j--;
+	}
+	k = 0;
+	while (k < lis_max)
+	{
+		printf("%d\n", sub_sequent[k]);
+		k++;
+	}
 }
 
 /*
@@ -200,6 +214,7 @@ void	whatever(t_a *stack_a)
 	lis_max_pos = get_lis_max_pos(stack_a, lis_max); //J'ai le position de mon LIS_MAX
 	printf("LIS MAX: %d\n", lis_max);
 	printf("LIS MAX POSITION: %d\n", lis_max_pos);
+	get_subsequent(stack_a, lis_max, lis_max_pos);
 	//printf("LIS TAB:\n");
 	//print_tab(stack_a->lis_tab, stack_a->size);
 
