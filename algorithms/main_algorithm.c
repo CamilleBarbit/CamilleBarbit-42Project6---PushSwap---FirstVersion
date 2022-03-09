@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 15:47:20 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 16:00:32 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ void	get_subsequent(t_a *stack_a, int lis_max, int lis_max_pos)
 
 	i = lis_max_pos; //11 dans ce cas
 	k = lis_max - 1; // vaut 5 (index pour se deplacer dans sub_sequent)
-	//j = lis_max_pos - 2; // j vaut 9
 	j = i - 1;
-	//tempo = stack_a->lis_tab[i] - stack_a->lis_tab[i - 1]; // 6 - 4 = 2
 	sub_sequent[k] = stack_a->tab[i];
 	while (j >= 0)
 	{
@@ -129,39 +127,6 @@ int	find_lis_max(t_a *stack_a)
 /*
 FUNCTION TO FIND LIS LENGTH
 */
-// int	test_lis(int *tmp, t_a *stack_a)
-// {
-// 	int	lis_max;
-// 	int	i;
-// 	int	lis_tab[stack_a->size];
-// 	int	j;
-
-// 	j = 0;
-// 	lis_max = 1;
-// 	set_lis_tab_to_one(stack_a, lis_tab);
-// 	i = 1;
-// 	while (i < stack_a->size)
-// 	{
-// 		while (j < i)
-// 		{
-// 			if (tmp[i] > tmp[j] && lis_tab[i] < lis_tab[j] + 1)
-// 			{
-// 				lis_tab[i] = lis_tab[j] + 1;
-// 			}
-// 			j++;
-// 		}
-// 		j = 0;
-// 		i++;
-// 	}
-// 	lis_max = find_lis_max(stack_a, lis_tab);
-// 	//printf("TAB LIS:\n");
-// 	//print_tab(lis_tab, stack_a->size);
-// 	//printf("LEN_LIS: %d\n", lis_max);
-// 	// printf("INDICE SUB_SEQUENCE:\n");
-// 	// print_tab(sub_sequence, stack_a->size);
-// 	return (lis_max);
-// }
-
 void	test_lis(t_a *stack_a)
 {
 	int	i;
@@ -187,10 +152,10 @@ void	test_lis(t_a *stack_a)
 		i++;
 	}
 }
+
 /*
 Function to find copy stack_a in tmp: STEP 2
 */
-
 void	whatever(t_a *stack_a)
 {
 	int	j;
@@ -205,7 +170,7 @@ void	whatever(t_a *stack_a)
 	if (j != 0) //si le minimum est ailleurs qu'a la premiere position, alors je le mets on top
 		place_it_on_top(stack_a, j);
 	printf("TAB A:\n");
-	print_tab(stack_a->tab, 10);
+	print_tab(stack_a->tab, stack_a->size);
 	// printf("\n\n\n");
 	// printf("TAB TEMP:\n");
 	// print_tab(tmp, stack_a->size);
