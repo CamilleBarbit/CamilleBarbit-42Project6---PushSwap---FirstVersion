@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 12:25:26 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 15:44:51 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	push_min(t_a *stack_a, t_a *stack_b, int min);
 void	sort_three(t_a *stack_a);
 void	sort_five(t_a *stack_a, t_a *stack_b);
 void	place_it_on_top(t_a *stack_a, int min_pos);
+void	get_subsequent(t_a *stack_a, int lis_max, int lis_max_pos);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);
