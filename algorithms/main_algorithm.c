@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/09 14:02:34 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/09 14:04:52 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,13 @@ void	get_subsequent(t_a *stack_a, int lis_max, int max_pos)
 	int	sub_sequent[lis_max];
 	int	i;
 	int	j;
+	int	k;
 	int	tempo;
 
 	i = lis_max_pos; //11 dans ce cas
+	k = lis_max - 1; // vaut 5 (index pour se deplacer dans sub_sequent)
 	tempo = stack_a->lis_tab[i] - stack_a->lis_tab[i - 1]; // 6 - 4 = 2
-	sub_sequent[lis_max - 1] = stack_a->tab[i];
+	sub_sequent[k] = stack_a->tab[i];
 	while (lix_max < 0)
 
 
