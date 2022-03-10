@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
+#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/09 16:36:28 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/10 11:20:02 by camillebarb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ C_FILES = errors/args_are_valid.c \
 			algorithms/algorithm_of_three.c \
 			algorithms/algorithm_of_five.c \
 			algorithms/main_algorithm.c \
-			algorithms/find_lis.c \
+			algorithms/algorithms_utils/find_lis.c \
 
 
 O_FILES = ${C_FILES:.c=.o}
