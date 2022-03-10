@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 10:50:25 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 11:53:13 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	rra(t_a *stack_a);
 void	rrb(t_a *stack_b);
 void	init_struct(t_a *stack_a, t_a *stack_b, int size);
 void	fill_stack_a(t_a *stack_a, char **str, int i);
-void	push_min(t_a *stack_a, t_a *stack_b, int min);
+void	push_in_b(t_a *stack_a, t_a *stack_b, int pos);
 void	sort_three(t_a *stack_a);
 void	sort_five(t_a *stack_a, t_a *stack_b);
 void	place_it_on_top(t_a *stack_a, int min_pos);
@@ -71,5 +71,6 @@ void	test_lis(t_a *stack_a);
 void	find_lis_max(t_a *stack_a);
 int		get_lis_max_pos(t_a *stack_a, int lis_max);
 void	get_lis(t_a *stack_a);
+void	check_if_in_sub_sequence(t_a *stack_a, t_a *stack_b);
 
 #endif
