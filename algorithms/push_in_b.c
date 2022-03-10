@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:28:02 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/10 13:18:39 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 14:46:15 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,10 @@ int	check_if_in_sub_sequence(t_a *stack_a, int i)
 			return (0);
 		j++;
 	}
-	printf("LIS: \n");
-	print_tab(stack_a->sub_sequence, stack_a->lis_max);
 	return (1);
 }
 
-void	do_it(t_a *stack_a, t_a *stack_b)
+void	separate_lis(t_a *stack_a, t_a *stack_b)
 {
 	int	i;
 
@@ -48,14 +46,9 @@ void	do_it(t_a *stack_a, t_a *stack_b)
 	{
 		if (check_if_in_sub_sequence(stack_a, i) == 1)
 		{
-			//stack_a->size--;
-			//printf("SIZE A : %d\n", stack_a->size);
 			push_in_b(stack_a, stack_b, i);
+			i = 0;
 		}
 		i++;
 	}
-	printf("TABLE A\n");
-	print_tab(stack_a->tab, stack_a->size);
-	printf("TABLE B\n");
-	print_tab(stack_b->tab, stack_a->size);
 }
