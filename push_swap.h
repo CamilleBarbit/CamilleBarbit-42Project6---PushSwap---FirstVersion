@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 12:41:03 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 14:47:26 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ void	sort_three(t_a *stack_a);
 void	sort_five(t_a *stack_a, t_a *stack_b);
 void	place_it_on_top(t_a *stack_a, int min_pos);
 void	get_sub_sequence(t_a *stack_a);
+void	test_lis(t_a *stack_a);
+void	find_lis_max(t_a *stack_a);
+void	get_lis(t_a *stack_a);
+void	separate_lis(t_a *stack_a, t_a *stack_b);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);
@@ -67,11 +71,7 @@ int		check_if_in_order(t_a *stack_a);
 int		argv1_is_valid(char **str);
 int		check_first_arg(char *str, t_a *stack_a, t_a *stack_b);
 int		look_for_smallest_num(t_a *stack_a);
-void	test_lis(t_a *stack_a);
-void	find_lis_max(t_a *stack_a);
 int		get_lis_max_pos(t_a *stack_a, int lis_max);
-void	get_lis(t_a *stack_a);
 int		check_if_in_sub_sequence(t_a *stack_a, int i);
-void	do_it(t_a *stack_a, t_a *stack_b);
 
 #endif
