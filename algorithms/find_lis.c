@@ -6,11 +6,11 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:32:09 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 11:07:05 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 12:54:49 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ".../push_swap.h"
+#include "../push_swap.h"
 
 /*
 Step 3: Function to get sub_sequence (which actually corresponds to the LIS)

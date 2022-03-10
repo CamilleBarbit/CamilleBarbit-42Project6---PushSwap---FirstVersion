@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 11:52:04 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 13:10:43 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ void	get_lis(t_a *stack_a)
 	test_lis(stack_a); //Je recupere mon tableau avec toutes les listes de int ordonnés possibles
 	find_lis_max(stack_a); //Je determine la longueur de ma LIS
 	get_sub_sequence(stack_a); //Je recupere les valeurs de la LIS
+	printf("LIS: \n");
 	print_tab(stack_a->sub_sequence, stack_a->lis_max);
 }
