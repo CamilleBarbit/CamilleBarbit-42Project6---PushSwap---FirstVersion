@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 11:00:44 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 11:52:04 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 /*
 FONCTION DE TEST POUR AFFICHER LE TABLEAU TRIE
 */
-// static void	print_tab(int *tab, int size)
-// {
-// 	int	i;
+static void	print_tab(int *tab, int size)
+{
+	int	i;
 
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		printf("%d\n", tab[i++]);
-// 	}
-// }
+	i = 0;
+	while (i < size)
+	{
+		printf("%d\n", tab[i++]);
+	}
+}
 
 /*
-STEP 1: Function to place the minimum on top of stack_a->tab
+Function to place the minimum on top of stack_a->tab if need be
 */
 void	place_it_on_top(t_a *stack_a, int min_pos)
 {
@@ -58,5 +58,6 @@ void	get_lis(t_a *stack_a)
 		place_it_on_top(stack_a, j);
 	test_lis(stack_a); //Je recupere mon tableau avec toutes les listes de int ordonnés possibles
 	find_lis_max(stack_a); //Je determine la longueur de ma LIS
-	get_sub_sequence(stack_a);
+	get_sub_sequence(stack_a); //Je recupere les valeurs de la LIS
+	print_tab(stack_a->sub_sequence, stack_a->lis_max);
 }

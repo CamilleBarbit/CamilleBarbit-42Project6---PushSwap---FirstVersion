@@ -3,42 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm_of_five.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:10:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/07 10:37:25 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/10 11:56:55 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-// static void	show_tab(t_a *stack)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (i < stack->size)
-// 		printf("%d\n", stack->tab[i++]);
-// }
-
-void	push_min(t_a *stack_a, t_a *stack_b, int min)
+void	push_in_b(t_a *stack_a, t_a *stack_b, int pos)
 {
-	if (min > stack_a->size / 2)
+	if (pos > stack_a->size / 2)
 	{
-		while (min < stack_a->size)
+		while (pos < stack_a->size)
 		{
 			rra(stack_a);
-			min++;
+			pos++;
 		}
 		pb(stack_a, stack_b);
 	}
 	else
 	{
-		while (min > 0)
+		while (pos > 0)
 		{
 			ra(stack_a);
-			min--;
+			pos--;
 		}
 		pb(stack_a, stack_b);
 	}
@@ -66,7 +56,6 @@ int	look_for_smallest_num(t_a *stack_a)
 	return (j);
 }
 
-
 void	sort_five(t_a *stack_a, t_a *stack_b)
 {
 	int	j;
@@ -76,13 +65,11 @@ void	sort_five(t_a *stack_a, t_a *stack_b)
 	while (count > 0)
 	{
 		j = look_for_smallest_num(stack_a);
-		push_min(stack_a, stack_b, j);
+		push_in_b(stack_a, stack_b, j);
 		count--;
 	}
 	sort_three(stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
-	// printf("TAB A\n");
-	// show_tab(stack_a);
 }
 
