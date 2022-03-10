@@ -6,7 +6,7 @@
 #    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/10 11:20:02 by camillebarb      ###   ########.fr        #
+#    Updated: 2022/03/10 11:28:23 by camillebarb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ C_FILES = errors/args_are_valid.c \
 			algorithms/algorithm_of_five.c \
 			algorithms/main_algorithm.c \
 			algorithms/algorithms_utils/find_lis.c \
+			algorithms/algorithms_utils/push_in_b.c\
 
 
 O_FILES = ${C_FILES:.c=.o}
