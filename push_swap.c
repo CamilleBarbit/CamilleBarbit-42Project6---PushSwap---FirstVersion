@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 10:21:01 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 12:42:10 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int main(int argc, char **argv)
 		init_struct(stack_a, stack_b, argc - 1);
 		fill_stack_a(stack_a, argv, 1);
 		get_lis(stack_a);
+		do_it(stack_a, stack_b);
 		//sort_five(stack_a, stack_b);
 		//if (check_if_in_order(stack_a) == 0)
 				// sort_three(stack_a);

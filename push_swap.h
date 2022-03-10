@@ -6,7 +6,7 @@
 /*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 11:53:13 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/10 12:41:03 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	test_lis(t_a *stack_a);
 void	find_lis_max(t_a *stack_a);
 int		get_lis_max_pos(t_a *stack_a, int lis_max);
 void	get_lis(t_a *stack_a);
-void	check_if_in_sub_sequence(t_a *stack_a, t_a *stack_b);
+int		check_if_in_sub_sequence(t_a *stack_a, int i);
+void	do_it(t_a *stack_a, t_a *stack_b);
 
 #endif
