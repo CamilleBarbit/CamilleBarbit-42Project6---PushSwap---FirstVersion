@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 14:59:38 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 16:52:17 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,7 @@ int		get_lis_max_pos(t_a *stack_a, int lis_max);
 int		check_if_in_sub_sequence(t_a *stack_a, int i);
 int		count_moves_in_b(t_a *stack_b, int pos);
 int		is_nb_max_in_stack(t_a *stack, int nb);
+int		look_for_biggest_num(t_a *stack_a);
+int		find_closest_nb(t_a *stack_a, int nb);
 
 #endif
