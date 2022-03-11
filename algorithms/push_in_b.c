@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_in_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:28:02 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/10 14:46:15 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/11 14:20:21 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	print_tab(int *tab, int size)
 int	check_if_in_sub_sequence(t_a *stack_a, int i)
 {
 	int	j;
-	
+
 	j = 0;
 	while (j < stack_a->lis_max)
 	{
@@ -40,8 +40,10 @@ int	check_if_in_sub_sequence(t_a *stack_a, int i)
 void	separate_lis(t_a *stack_a, t_a *stack_b)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	while(i < stack_a->size)
 	{
 		if (check_if_in_sub_sequence(stack_a, i) == 1)
@@ -51,4 +53,13 @@ void	separate_lis(t_a *stack_a, t_a *stack_b)
 		}
 		i++;
 	}
+	// printf("TAB A:\n");
+	// print_tab(stack_a->tab, stack_a->size);
+	// printf("TAB B:\n");
+	// print_tab(stack_b->tab, stack_b->size);
+	// while (j < stack_b->size)
+	// {
+	// 	printf("MOVES COUNT: %D\n", count_moves_in_b(stack_b, j));
+	// 	j++;
+	// }
 }
