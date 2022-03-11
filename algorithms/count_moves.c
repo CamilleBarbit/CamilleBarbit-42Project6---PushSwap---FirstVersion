@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:44:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 14:59:43 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 15:15:08 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,22 @@ int	count_moves_in_b(t_a *stack_b, int pos)
 		}
 	}
 	return (count);
+}
+
+
+int	count_move_in_a(t_a *stack_b, t_a *stack_a, int pos)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	j = stack_b->size - 1;
+	count = 1; //J'intialise count a 1 car dans tous les cas il faut faire pa pour push mon nombre de stack_b a stack_a
+	if (stack_a->tab[j] > stack_b->tab[pos] && stack_b->tab[pos] < stack_a->tab[i])
+		count++;
+	while (i < stack_a->size / 2)
+	{
+		
+	}
 }
