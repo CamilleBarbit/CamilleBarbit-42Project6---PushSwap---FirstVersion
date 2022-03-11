@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:32:09 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 13:31:57 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 14:53:16 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	get_sub_sequence(t_a *stack_a)
 	stack_a->sub_sequence = malloc(sizeof(int) * stack_a->lis_max);
 	if (!stack_a->sub_sequence)
 		return ;
-	i = stack_a->max_pos; //11 dans ce cas
-	k = stack_a->lis_max - 1; // vaut 5 (index pour se deplacer dans sub_sequence)
+	i = stack_a->max_pos;
+	k = stack_a->lis_max - 1;
 	j = i - 1;
 	stack_a->sub_sequence[k] = stack_a->tab[i];
 	while (j >= 0)
@@ -42,7 +42,7 @@ void	get_sub_sequence(t_a *stack_a)
 }
 
 /*
-Step 2: Function to actually get the length of the longest LIS
+Step 2: Function to actually get the length of the LIS
 */
 void	find_lis_max(t_a *stack_a)
 {
