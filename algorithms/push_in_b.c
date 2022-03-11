@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:28:02 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/11 14:52:31 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 16:57:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ Function to separate the LIS from the rest -> the LIS stays in stack_a and the r
 void	separate_lis(t_a *stack_a, t_a *stack_b)
 {
 	int	i;
-	int	j;
+	//int	j;
 
 	i = 0;
-	j = 0;
+	//j = 0;
 	while(i < stack_a->size)
 	{
 		if (check_if_in_sub_sequence(stack_a, i) == 1)
@@ -63,9 +63,9 @@ void	separate_lis(t_a *stack_a, t_a *stack_b)
 	print_tab(stack_a->tab, stack_a->size);
 	printf("TAB B:\n");
 	print_tab(stack_b->tab, stack_b->size);
-	while (j < stack_b->size)
-	{
-		printf("MOVES COUNT: %D\n", count_moves_in_b(stack_b, j));
-		j++;
-	}
+	// while (j < stack_b->size)
+	// {
+	// 	printf("MOVES COUNT: %D\n", count_moves_in_b(stack_b, j));
+	// 	j++;
+	// }
 }
