@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:44:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 17:30:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 17:51:36 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,12 @@ int	find_closest_nb(t_a *stack_a, int nb)
 	int	i;
 	int	j;
 	int	tempo;
+	int	k;
 	
 	i = 0;
 	j = look_for_biggest_num(stack_a);
 	tempo = stack_a->tab[j] - nb;
-	j = 0;
+	k = j;
 	while (i < stack_a->size)
 	{
 		if (stack_a->tab[i] > nb)
@@ -100,12 +101,12 @@ int	find_closest_nb(t_a *stack_a, int nb)
 			if (stack_a->tab[i] - nb < tempo)
 			{
 				tempo = stack_a->tab[i] - nb;
-				j = i;
+				k = i;
 			}
 		}
 		i++;
 	}
-	return (j); // this is the index of the closest following number
+	return (k); // this is the index of the closest following number
 }
 
 /*
@@ -116,9 +117,9 @@ int	count_moves_in_a(t_a *stack_a, int pos)
 	int	count;
 
 	count = 1;
-	if (pos > stack_b->size / 2)
+	if (pos > stack_a->size / 2)
 	{
-		while (pos < stack_b->size)
+		while (pos < stack_a->size)
 		{
 			count++;
 			pos++;
@@ -132,5 +133,6 @@ int	count_moves_in_a(t_a *stack_a, int pos)
 			pos--;
 		}
 	}
+	printf("NOMBRE DE MOVES POUR METTRE LE NB AU TOP: %d\n", count);
 	return (count);
 }
