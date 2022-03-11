@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_algorithm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 13:17:59 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/11 14:54:30 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void	place_it_on_top(t_a *stack_a, int min_pos)
 	}
 }
 
+/*
+Function to get the LIS and put it in my structure -> stack_a->sub_sequence
+*/
 void	get_lis(t_a *stack_a)
 {
 	int	j;
