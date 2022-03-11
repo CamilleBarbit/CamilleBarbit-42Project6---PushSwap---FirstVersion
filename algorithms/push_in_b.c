@@ -6,12 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:28:02 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/11 14:20:21 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 14:52:31 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*FUNCTION TO TEST */
 static void	print_tab(int *tab, int size)
 {
 	int	i;
@@ -23,6 +24,9 @@ static void	print_tab(int *tab, int size)
 	}
 }
 
+/*
+Function to check if each element of stack_a is in the LIS or not
+*/
 int	check_if_in_sub_sequence(t_a *stack_a, int i)
 {
 	int	j;
@@ -36,7 +40,9 @@ int	check_if_in_sub_sequence(t_a *stack_a, int i)
 	}
 	return (1);
 }
-
+/*
+Function to separate the LIS from the rest -> the LIS stays in stack_a and the rest goes to stack_b
+*/
 void	separate_lis(t_a *stack_a, t_a *stack_b)
 {
 	int	i;
@@ -53,13 +59,13 @@ void	separate_lis(t_a *stack_a, t_a *stack_b)
 		}
 		i++;
 	}
-	// printf("TAB A:\n");
-	// print_tab(stack_a->tab, stack_a->size);
-	// printf("TAB B:\n");
-	// print_tab(stack_b->tab, stack_b->size);
-	// while (j < stack_b->size)
-	// {
-	// 	printf("MOVES COUNT: %D\n", count_moves_in_b(stack_b, j));
-	// 	j++;
-	// }
+	printf("TAB A:\n");
+	print_tab(stack_a->tab, stack_a->size);
+	printf("TAB B:\n");
+	print_tab(stack_b->tab, stack_b->size);
+	while (j < stack_b->size)
+	{
+		printf("MOVES COUNT: %D\n", count_moves_in_b(stack_b, j));
+		j++;
+	}
 }
