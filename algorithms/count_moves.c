@@ -6,14 +6,14 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:44:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 17:23:43 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 17:30:46 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /*
-Function to look for the biggest num in the stack
+Function to look for the biggest num in the stack -> it returns its index
 */
 int	look_for_biggest_num(t_a *stack_a)
 {
@@ -33,7 +33,6 @@ int	look_for_biggest_num(t_a *stack_a)
 		}
 		i++;
 	}
-	//printf("THE INDEX OF BIGGEST NUM in A: %d\n", j);
 	return (j);
 }
 
@@ -106,5 +105,32 @@ int	find_closest_nb(t_a *stack_a, int nb)
 		}
 		i++;
 	}
-	return (j);
+	return (j); // this is the index of the closest following number
+}
+
+/*
+Function that counts the number of moves to put a number from stack_b to its right place in stack_a
+*/
+int	count_moves_in_a(t_a *stack_a, int pos)
+{
+	int	count;
+
+	count = 1;
+	if (pos > stack_b->size / 2)
+	{
+		while (pos < stack_b->size)
+		{
+			count++;
+			pos++;
+		}
+	}
+	else
+	{
+		while (pos > 0)
+		{
+			count++;
+			pos--;
+		}
+	}
+	return (count);
 }
