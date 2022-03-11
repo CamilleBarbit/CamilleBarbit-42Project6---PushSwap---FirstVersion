@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
+#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/10 12:54:45 by camillebarb      ###   ########.fr        #
+#    Updated: 2022/03/11 14:06:49 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ C_FILES = errors/args_are_valid.c \
 			algorithms/main_algorithm.c \
 			algorithms/find_lis.c \
 			algorithms/push_in_b.c \
+			algorithms/count_moves.c \
 
 O_FILES = ${C_FILES:.c=.o}
 
