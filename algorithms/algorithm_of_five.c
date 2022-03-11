@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm_of_five.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:10:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 11:56:55 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/11 14:50:36 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*
+Function to push numbers from stack_a to stack_b depending on their position in stack_a
+*/
 void	push_in_b(t_a *stack_a, t_a *stack_b, int pos)
 {
 	if (pos > stack_a->size / 2)
@@ -35,6 +38,9 @@ void	push_in_b(t_a *stack_a, t_a *stack_b, int pos)
 
 }
 
+/*
+Function to look for the smallest number in stack_a, in order to put it on top
+*/
 int	look_for_smallest_num(t_a *stack_a)
 {
 	int	i;
