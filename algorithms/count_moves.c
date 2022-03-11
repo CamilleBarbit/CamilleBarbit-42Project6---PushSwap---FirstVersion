@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:44:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 14:48:27 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/11 14:59:43 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 Function to check if my number is the maximum in stack_a or/and stack_b
 */
-int	is_my_number_max_in_stack(t_a *stack, int nb)
+int	is_nb_max_in_stack(t_a *stack, int nb)
 {
 	int	i;
 
