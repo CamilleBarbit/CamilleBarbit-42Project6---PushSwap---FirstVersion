@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_lis.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:32:09 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/10 12:54:49 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/11 13:31:57 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,6 @@ void	get_sub_sequence(t_a *stack_a)
 		j--;
 	}
 	free(stack_a->lis_tab); //je free lis_tab, car je n'en ai plus besoin
-	// k = 0;
-	// while (k < stack_a->lis_max)
-	// {
-	// 	printf("%d\n", stack_a->sub_sequence[k]);
-	// 	k++;
-	// }
 }
 
 /*
