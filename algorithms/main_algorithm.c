@@ -6,23 +6,42 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 16:34:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/14 16:55:00 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
+int	nb_is_negative(int nb)
+{
+	
+}
 void	update_pos_a_and_b(t_a *stack_a, t_a *stack_b, int *tempo, int i)
 {
+	int	nb1;
+	int	nb2;
 	if (stack_a->moves[0] + tempo[0] == 0 || stack_a->moves[0] - tempo[0] == 0)
 	{
-		if (tempo[1] - 0 < stack_a->moves[1] - 0)
-		{
+		nb1 = tempo[1];
+		nb2 = moves[1];
+		if (nb1 < 0)
+			nb1 = nb1 * (-1);
+		if (nb2 < 0)
+			nb2 = nb2 * (-1);
+		if (nb1 - 0 < nb2 - 0)
 			get_pos_a_and_pos_b(stack_a, stack_b, i)
-		}
 	}
-
+	else if (stack_a->moves[1] + tempo[1] == 0 || stack_a->moves[1] - tempo[1] == 0)
+	{
+		nb1 = tempo[0];
+		nb2 = moves[0];
+		if (nb1 < 0)
+			nb1 = nb1 * (-1);
+		if (nb2 < 0)
+			nb2 = nb2 * (-1);
+		if (nb1 - 0 < nb2 - 0)
+			get_pos_a_and_pos_b(stack_a, stack_b, i)
+	}
 }
 void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 {
@@ -63,6 +82,7 @@ void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos) //on va envoyer la
 	pos_a = count_moves_in_a(stack_a, index_next_nb);
 	if (is_nb_max_in_stack(stack_b, stack_b->tab[pos]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[pos]) == 1)
 	{
+		//cette condition est vitale si mon nbr est le maximum dans les deux stacks ->il le placera au dessus du nombre juste inferieur dans la stack_a->Il faudra donc faire un swap en plus
 		if (index_next_nb > stack_a->size / 2)
 			pos_a -=1;
 		else
