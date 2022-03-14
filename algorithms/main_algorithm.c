@@ -6,32 +6,44 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 13:38:35 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/14 13:58:50 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
+{
+	int	tempo[2];
+	int	pos_a;
+	int	pos_b;
+	int	index_next_nb;
+	int	i;
+
+	i = 1;
+	pos_b = count_moves_in_b(stack_b, i);
+
+}
+
 /*
 Function to put in a table of two the nb of moves to put stack_b->tab[i] on top of stack_b and its following number on top of stack_a
 */
-void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos)
+void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b) //on va envoyer la position 0
 {
 	int	index_next_nb;
 	int	pos_b;
 	int	pos_a;
 
-	pos_b = count_moves_in_b(stack_b, pos);
-	index_next_nb = find_closest_nb(stack_a, stack_b->tab[pos]);
+	pos_b = count_moves_in_b(stack_b, 0);
+	index_next_nb = find_closest_nb(stack_a, stack_b->tab[0]);
 	pos_a = count_moves_in_a(stack_a, index_next_nb);
-	if (is_nb_max_in_stack(stack_b, stack_b->tab[pos]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[pos]) == 1)
+	if (is_nb_max_in_stack(stack_b, stack_b->tab[0]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[0]) == 1)
 	{
 		if (index_next_nb > stack_a->size / 2)
 			pos_a -=1;
 		else
 			pos_a += 1;
 	}
-	// ça depend de sa position / soit c'est pos_a -= 1, soit c'est pos_a += 1;
 	printf("NEXT NUMBER: %d\n", stack_a->tab[index_next_nb]);
 	stack_a->moves[0] = pos_a;
 	stack_a->moves[1] = pos_b;
