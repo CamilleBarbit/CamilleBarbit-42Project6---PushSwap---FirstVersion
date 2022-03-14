@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 17:37:30 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/14 12:18:58 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ struct s_a
 	int	*sub_sequence;
 	int	lis_max;
 	int	max_pos;
+	int	moves[2];
 };
 
 /*
@@ -62,6 +63,7 @@ void	test_lis(t_a *stack_a);
 void	find_lis_max(t_a *stack_a);
 void	get_lis(t_a *stack_a);
 void	separate_lis(t_a *stack_a, t_a *stack_b);
+void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);
