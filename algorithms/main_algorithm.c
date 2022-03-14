@@ -6,38 +6,62 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 13:58:50 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/14 16:34:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+
+void	update_pos_a_and_b(t_a *stack_a, t_a *stack_b, int *tempo, int i)
+{
+	if (stack_a->moves[0] + tempo[0] == 0 || stack_a->moves[0] - tempo[0] == 0)
+	{
+		if (tempo[1] - 0 < stack_a->moves[1] - 0)
+		{
+			get_pos_a_and_pos_b(stack_a, stack_b, i)
+		}
+	}
+
+}
 void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 {
 	int	tempo[2];
-	int	pos_a;
-	int	pos_b;
 	int	index_next_nb;
 	int	i;
 
 	i = 1;
-	pos_b = count_moves_in_b(stack_b, i);
+	while (i < stack_b->size)
+	{
+		tempo[1] = count_moves_in_b(stack_b, i);
+		index_next_nb = find_closest_nb(stack_a, stack_b->tab[i]);
+		tempo[0] = count_moves_in_a(stack_a, index_next_nb);
+		if (is_nb_max_in_stack(stack_b, stack_b->tab[i]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[i]) == 1)
+		{
+			if (index_next_nb > stack_a->size / 2)
+				tempo[0] -=1;
+			else
+				tempo[0] += 1;
+		}
+		update_pos_a_and_pos_b(stack_a, stack_b, tempo, i);
+		i++;
+	}
 
 }
 
 /*
 Function to put in a table of two the nb of moves to put stack_b->tab[i] on top of stack_b and its following number on top of stack_a
 */
-void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b) //on va envoyer la position 0
+void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos) //on va envoyer la position 0
 {
 	int	index_next_nb;
 	int	pos_b;
 	int	pos_a;
 
-	pos_b = count_moves_in_b(stack_b, 0);
-	index_next_nb = find_closest_nb(stack_a, stack_b->tab[0]);
+	pos_b = count_moves_in_b(stack_b, pos);
+	index_next_nb = find_closest_nb(stack_a, stack_b->tab[pos]);
 	pos_a = count_moves_in_a(stack_a, index_next_nb);
-	if (is_nb_max_in_stack(stack_b, stack_b->tab[0]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[0]) == 1)
+	if (is_nb_max_in_stack(stack_b, stack_b->tab[pos]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[pos]) == 1)
 	{
 		if (index_next_nb > stack_a->size / 2)
 			pos_a -=1;
