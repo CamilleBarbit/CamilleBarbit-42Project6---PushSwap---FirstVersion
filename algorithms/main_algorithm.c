@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 11:44:16 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/14 12:20:55 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,23 @@ Function to put in a table of two the nb of moves to put stack_b->tab[i] on top 
 */
 void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos)
 {
-	int	moves[2];
 	int	index_next_nb;
 	int	pos_b;
 	int	pos_a;
 
 	pos_b = count_moves_in_b(stack_b, pos);
-	index_next_nb = find_closest_nb(stack_a, stack_a->tab[pos]);
+	index_next_nb = find_closest_nb(stack_a, stack_b->tab[pos]);
 	pos_a = count_moves_in_a(stack_a, index_next_nb);
-	moves[1] = pos_a;
-	moves[2] = pos_b;
-
+	if (is_nb_max_in_stack(stack_b, stack_b->tab[pos]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[pos]) == 1)
+		// ça depend de sa position / soit c'est pos_a -= 1, soit c'est pos_a += 1;
+	printf("NEXT NUMBER: %d\n", stack_a->tab[index_next_nb]);
+	stack_a->moves[0] = pos_a;
+	stack_a->moves[1] = pos_b;
+	printf("POS A: %d\n", stack_a->moves[0]);
+	printf("POS B: %d\n", stack_a->moves[1]);
 }
+
+//!!!!!Penser a regler le pb si mon nb est le maximum dans les deux strings!!!!!!
 
 /*
 Function to place the minimum on top of stack_a->tab if need be
