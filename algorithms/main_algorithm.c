@@ -6,25 +6,29 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 14:54:30 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/14 11:44:16 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /*
-FONCTION DE TEST POUR AFFICHER LE TABLEAU TRIE
+Function to put in a table of two the nb of moves to put stack_b->tab[i] on top of stack_b and its following number on top of stack_a
 */
-// static void	print_tab(int *tab, int size)
-// {
-// 	int	i;
+void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos)
+{
+	int	moves[2];
+	int	index_next_nb;
+	int	pos_b;
+	int	pos_a;
 
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		printf("%d\n", tab[i++]);
-// 	}
-// }
+	pos_b = count_moves_in_b(stack_b, pos);
+	index_next_nb = find_closest_nb(stack_a, stack_a->tab[pos]);
+	pos_a = count_moves_in_a(stack_a, index_next_nb);
+	moves[1] = pos_a;
+	moves[2] = pos_b;
+
+}
 
 /*
 Function to place the minimum on top of stack_a->tab if need be

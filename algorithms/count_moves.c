@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:44:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/11 17:51:36 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/14 11:01:42 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,12 @@ int	count_moves_in_b(t_a *stack_b, int pos)
 	int	count;
 
 	count = 0;
+	//printf("THE NUMBER IN QUESTION IS : %d\n", stack_b->tab[pos]);
 	if (pos > stack_b->size / 2)
 	{
 		while (pos < stack_b->size)
 		{
-			count++;
+			count--;
 			pos++;
 		}
 	}
@@ -89,7 +90,7 @@ int	find_closest_nb(t_a *stack_a, int nb)
 	int	j;
 	int	tempo;
 	int	k;
-	
+
 	i = 0;
 	j = look_for_biggest_num(stack_a);
 	tempo = stack_a->tab[j] - nb;
@@ -110,18 +111,18 @@ int	find_closest_nb(t_a *stack_a, int nb)
 }
 
 /*
-Function that counts the number of moves to put a number from stack_b to its right place in stack_a
+Function that counts the number of moves to put a the number just right after that of stack_b at the top of stack_a
 */
 int	count_moves_in_a(t_a *stack_a, int pos)
 {
 	int	count;
 
-	count = 1;
+	count = 0;
 	if (pos > stack_a->size / 2)
 	{
 		while (pos < stack_a->size)
 		{
-			count++;
+			count--;
 			pos++;
 		}
 	}
@@ -133,6 +134,5 @@ int	count_moves_in_a(t_a *stack_a, int pos)
 			pos--;
 		}
 	}
-	printf("NOMBRE DE MOVES POUR METTRE LE NB AU TOP: %d\n", count);
 	return (count);
 }
