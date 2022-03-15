@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 13:57:42 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/15 11:03:18 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ int main(int argc, char **argv)
 		fill_stack_a(stack_a, argv, 1);
 		get_lis(stack_a);
 		separate_lis(stack_a, stack_b);
-		get_pos_a_and_pos_b(stack_a, stack_b);
-		printf("VALUE: %d\n", stack_b->tab[0]);
 		//i = count_moves_in_b(stack_b, 4);
 		//printf("THE NUMBER OF MOVES: %d\n", i);
 		// i = find_closest_nb(stack_a, stack_b->tab[3]);
