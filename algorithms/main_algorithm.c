@@ -6,43 +6,44 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 16:55:00 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/15 11:51:44 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	nb_is_negative(int nb)
+int	nb_is_negative(int nb1, int nb2)
 {
-	
+	if (nb1 < 0 && nb2 > 0)
+		if (-nb1 > nb2)
+			return (1); // -> il faudra remplacer moves par tempo
+	if (nb1 > 0 && nb2 < 0)
+		if (-nb2 < nb1)
+			return (1);
+	else
+		if (-nb1 > -nb2)
+			return (1);
+	return (0);
 }
+
 void	update_pos_a_and_b(t_a *stack_a, t_a *stack_b, int *tempo, int i)
 {
-	int	nb1;
-	int	nb2;
 	if (stack_a->moves[0] + tempo[0] == 0 || stack_a->moves[0] - tempo[0] == 0)
 	{
-		nb1 = tempo[1];
-		nb2 = moves[1];
-		if (nb1 < 0)
-			nb1 = nb1 * (-1);
-		if (nb2 < 0)
-			nb2 = nb2 * (-1);
-		if (nb1 - 0 < nb2 - 0)
-			get_pos_a_and_pos_b(stack_a, stack_b, i)
+		if ((stack_a->moves[1] > 0 && tempo[1] > 0) && (tempo[1] < stack_a->moves[1]))
+			get_pos_a_and_pos_b(stack_a, stack_b, i);
+		else if (nb_is_negative(stack_a->moves[1], tempo[1]) == 1)
+			get_pos_a_and_pos_b(stack_a, stack_b, i);
 	}
 	else if (stack_a->moves[1] + tempo[1] == 0 || stack_a->moves[1] - tempo[1] == 0)
 	{
-		nb1 = tempo[0];
-		nb2 = moves[0];
-		if (nb1 < 0)
-			nb1 = nb1 * (-1);
-		if (nb2 < 0)
-			nb2 = nb2 * (-1);
-		if (nb1 - 0 < nb2 - 0)
-			get_pos_a_and_pos_b(stack_a, stack_b, i)
+		if ((stack_a->moves[0] > 0 && tempo[0] > 0) && (tempo[0] < stack_a->moves[0]))
+			get_pos_a_and_pos_b(stack_a, stack_b, i);
+		else if (nb_is_negative(stack_a->moves[0], tempo[0]) == 1)
+			get_pos_a_and_pos_b(stack_a, stack_b, i);
 	}
 }
+
 void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 {
 	int	tempo[2];
@@ -50,6 +51,7 @@ void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 	int	i;
 
 	i = 1;
+	get_pos_a_and_pos_b(stack_a, stack_b, 0);
 	while (i < stack_b->size)
 	{
 		tempo[1] = count_moves_in_b(stack_b, i);
@@ -74,48 +76,20 @@ Function to put in a table of two the nb of moves to put stack_b->tab[i] on top 
 void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos) //on va envoyer la position 0
 {
 	int	index_next_nb;
-	int	pos_b;
-	int	pos_a;
 
-	pos_b = count_moves_in_b(stack_b, pos);
+	stack_a->moves[1] = count_moves_in_b(stack_b, pos);
 	index_next_nb = find_closest_nb(stack_a, stack_b->tab[pos]);
-	pos_a = count_moves_in_a(stack_a, index_next_nb);
+	stack_a->moves[0] = count_moves_in_a(stack_a, index_next_nb);
 	if (is_nb_max_in_stack(stack_b, stack_b->tab[pos]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[pos]) == 1)
 	{
-		//cette condition est vitale si mon nbr est le maximum dans les deux stacks ->il le placera au dessus du nombre juste inferieur dans la stack_a->Il faudra donc faire un swap en plus
 		if (index_next_nb > stack_a->size / 2)
-			pos_a -=1;
+			stack_a->moves[0] -=1;
 		else
-			pos_a += 1;
+			stack_a->moves[0] += 1;
 	}
-	printf("NEXT NUMBER: %d\n", stack_a->tab[index_next_nb]);
-	stack_a->moves[0] = pos_a;
-	stack_a->moves[1] = pos_b;
-	printf("POS A: %d\n", stack_a->moves[0]);
-	printf("POS B: %d\n", stack_a->moves[1]);
-}
-
-/*
-Function to place the minimum on top of stack_a->tab if need be
-*/
-void	place_it_on_top(t_a *stack_a, int min_pos)
-{
-	if (min_pos > stack_a->size / 2)
-	{
-		while (min_pos < stack_a->size)
-		{
-			rra(stack_a);
-			min_pos++;
-		}
-	}
-	else
-	{
-		while (min_pos > 0)
-		{
-			ra(stack_a);
-			min_pos--;
-		}
-	}
+	//printf("NEXT NUMBER: %d\n", stack_a->tab[index_next_nb]);
+	//printf("POS A: %d\n", stack_a->moves[0]);
+	//printf("POS B: %d\n", stack_a->moves[1]);
 }
 
 /*

@@ -6,35 +6,11 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:44:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 11:01:42 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/15 11:00:31 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-/*
-Function to look for the biggest num in the stack -> it returns its index
-*/
-int	look_for_biggest_num(t_a *stack_a)
-{
-	int	i;
-	int	j;
-	int	tmp;
-
-	i = 0;
-	tmp = stack_a->tab[0];
-	j = 0;
-	while (i < stack_a->size)
-	{
-		if (stack_a->tab[i] > tmp)
-		{
-			tmp = stack_a->tab[i];
-			j = i;
-		}
-		i++;
-	}
-	return (j);
-}
 
 /*
 Function to check if my number is the maximum in stack_a or/and stack_b
