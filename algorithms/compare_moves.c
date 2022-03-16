@@ -6,48 +6,32 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:21 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/15 12:14:09 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/16 12:29:37 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// int	nb_is_negative(int nb1, int nb2)
-// {
-// 	if (nb1 < 0 && nb2 > 0)
-// 		if (-nb1 > nb2)
-// 			return (1); // -> il faudra remplacer moves par tempo
-// 	if (nb1 > 0 && nb2 < 0)
-// 		if (-nb2 < nb1)
-// 			return (1);
-// 	else
-// 		if (-nb1 > -nb2)
-// 			return (1);
-// 	return (0);
-// }
-
-// void	update_pos_a_and_b(t_a *stack_a, t_a *stack_b, int *tempo, int i)
-// {
-// 	if (stack_a->moves[0] + tempo[0] == 0 || stack_a->moves[0] - tempo[0] == 0)
-// 	{
-// 		if ((stack_a->moves[1] > 0 && tempo[1] > 0) && (tempo[1] < stack_a->moves[1]))
-// 			get_pos_a_and_pos_b(stack_a, stack_b, i);
-// 		else if (nb_is_negative(stack_a->moves[1], tempo[1]) == 1)
-// 			get_pos_a_and_pos_b(stack_a, stack_b, i);
-// 	}
-// 	else if (stack_a->moves[1] + tempo[1] == 0 || stack_a->moves[1] - tempo[1] == 0)
-// 	{
-// 		if ((stack_a->moves[0] > 0 && tempo[0] > 0) && (tempo[0] < stack_a->moves[0]))
-// 			get_pos_a_and_pos_b(stack_a, stack_b, i);
-// 		else if (nb_is_negative(stack_a->moves[0], tempo[0]) == 1)
-// 			get_pos_a_and_pos_b(stack_a, stack_b, i);
-// 	}
-// }
-
-void    update_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tempo, int i)
+/*
+Function to count the total amount of moves per int -> This function will return the sum of stack_a->moves and the temp
+*/
+int	sum_moves(int *tab)
 {
-    int sum1;
-    int sum2;
+	int	temp[2];
+	int	i;
+	int	sum;
+
+	i = 0;
+	while (i < 2)
+	{
+		if (tab[i] < 0)
+			temp[i] = -tab[i];
+		else
+			temp[i] = tab[i];
+		i++;
+	}
+	sum = temp[0] + temp[1];
+	return (sum);
 }
 
 void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
@@ -72,7 +56,6 @@ void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 		update_pos_a_and_pos_b(stack_a, stack_b, tempo, i);
 		i++;
 	}
-
 }
 
 /*
