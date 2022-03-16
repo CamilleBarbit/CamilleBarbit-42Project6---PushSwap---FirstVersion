@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:03:21 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/16 12:29:37 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/16 14:36:24 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,14 @@ int	sum_moves(int *tab)
 	return (sum);
 }
 
-void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
+void	compare_total_moves_count(t_a *stack_a, t_a * stack_b)
 {
-	int	tempo[2];
 	int	index_next_nb;
 	int	i;
+	int	sum1;
+	int	sum2;
 
+	get_pos_a_and_pos_b(stack_a, stack_b, 0);
 	i = 1;
 	while (i < stack_b->size)
 	{
@@ -53,9 +55,11 @@ void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 			else
 				tempo[0] += 1;
 		}
-		update_pos_a_and_pos_b(stack_a, stack_b, tempo, i);
+		sum1 = sum_moves(stack_a->moves);
+		sum2 = sum_moves(tempo);
+		if (sum2 < sum1)
+			get_pos_a_and_pos_b(stack_a, stack_b, i);
 		i++;
-	}
 }
 
 /*
@@ -78,4 +82,16 @@ void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos) //on va envoyer la
 	//printf("NEXT NUMBER: %d\n", stack_a->tab[index_next_nb]);
 	//printf("POS A: %d\n", stack_a->moves[0]);
 	//printf("POS B: %d\n", stack_a->moves[1]);
+}
+
+void	count_and_push(t_a *stack_a, t_a *stack_b)
+{
+	int	i;
+
+	i = 0;
+
+	while (i < stack_b->size - 1)
+	{
+		compare_total_moves_count(stack_a, stack_b);
+	}
 }
