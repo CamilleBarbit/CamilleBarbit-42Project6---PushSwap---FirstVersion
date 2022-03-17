@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   compare_moves_bis.c                                :+:      :+:    :+:   */
+/*   compare_moves.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:08:44 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 12:29:28 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/17 13:37:01 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tab, int pos)
 	tab[0] = count_moves_in_a(stack_a, index_next_nb);
 	tab[2] = 0;
 	check_rr_or_rrr(tab);
-	// if (is_nb_max_in_stack(stack_b, stack_b->tab[pos]) == 1 && is_nb_max_in_stack(stack_a, stack_b->tab[pos]) == 1)
+	//
 	// {
 	// 	if (index_next_nb > stack_a->size / 2)
 	// 		stack_a->moves[0] -=1;
@@ -108,14 +108,14 @@ void	compare_total_moves_count(t_a *stack_a, t_a * stack_b)
 
 void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
 {
-	int	i;
-
-	i = stack_b->size;
-	while (i >= 0)
+	while (stack_b->size > 0)
 	{
 		compare_total_moves_count(stack_a, stack_b);
 		check_move_in_a(stack_a);
 		check_move_in_b(stack_a, stack_b);
-		i--;
+		check_move_in_a_and_b(stack_a, stack_b);
+		pa(stack_a, stack_b);
+		if (is_nb_max_in_stack(stack_b, stack_a->tab[0]) == 1 && is_nb_max_in_stack(stack_a, stack_a->tab[0]) == 1)
+			sa(stack_a, stack_b);
 	}
 }
