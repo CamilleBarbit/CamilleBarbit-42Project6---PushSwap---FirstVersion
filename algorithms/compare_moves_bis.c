@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:08:44 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 11:13:30 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/17 11:16:36 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	update_better_element(t_a *stack_a)
 {
 	stack_a->moves[0] = stack_a->tempo[0];
 	stack_a->moves[1] = stack_a->tempo[1];
-	stack_a->moves[1] = stack_a->tempo[1];
+	stack_a->moves[2] = stack_a->tempo[2];
 }
 void	compare_total_moves_count(t_a *stack_a, t_a * stack_b)
 {
