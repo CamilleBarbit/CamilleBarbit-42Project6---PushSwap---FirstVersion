@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/14 12:18:58 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/17 13:52:28 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ struct s_a
 	int	*sub_sequence;
 	int	lis_max;
 	int	max_pos;
-	int	moves[2];
+	int	moves[3];
+	int	tempo[3];
+	int	rr;
+	int	rrr;
 };
 
 /*
@@ -64,6 +67,14 @@ void	find_lis_max(t_a *stack_a);
 void	get_lis(t_a *stack_a);
 void	separate_lis(t_a *stack_a, t_a *stack_b);
 void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos);
+void	check_rr_or_rrr(int *tab);
+void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tab, int pos);
+void	compare_total_moves_count(t_a *stack_a, t_a * stack_b);
+void	update_better_element(t_a *stack_a);
+void	turn_moves_into_action(t_a *stack_a, t_a *stack_b);
+void	check_move_in_a(t_a *stack_a);
+void	check_move_in_b(t_a *stack_a, t_a *stack_b);
+void	check_move_in_a_and_b(t_a *stack_a, t_a *stack_b);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);
@@ -80,5 +91,7 @@ int		is_nb_max_in_stack(t_a *stack, int nb);
 int		look_for_biggest_num(t_a *stack_a);
 int		find_closest_nb(t_a *stack_a, int nb);
 int		count_moves_in_a(t_a *stack_a, int pos);
+int		sum_moves(int *tab);
+
 
 #endif
