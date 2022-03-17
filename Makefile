@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
+#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/17 13:48:14 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/17 20:51:16 by camillebarb      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ C_FILES = errors/args_are_valid.c \
 			algorithms/push_in_b.c \
 			algorithms/count_moves.c \
 			algorithms/utils.c \
-			algoritms/compare_moves.c\
+			algorithms/compare_moves.c\
 			algorithms/push_back_in_a.c\
 
 O_FILES = ${C_FILES:.c=.o}
