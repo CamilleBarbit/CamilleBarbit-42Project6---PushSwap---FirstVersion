@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 13:52:28 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/17 20:53:57 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	sb(t_a *stack_b);
 void	ss(t_a *stack_a, t_a *stack_b);
 void	rra(t_a *stack_a);
 void	rrb(t_a *stack_b);
+void	rrr(t_a *stack_a, t_a *stack_b);
 void	init_struct(t_a *stack_a, t_a *stack_b, int size);
 void	fill_stack_a(t_a *stack_a, char **str, int i);
 void	push_in_b(t_a *stack_a, t_a *stack_b, int pos);
@@ -63,10 +64,10 @@ void	sort_five(t_a *stack_a, t_a *stack_b);
 void	place_it_on_top(t_a *stack_a, int min_pos);
 void	get_sub_sequence(t_a *stack_a);
 void	test_lis(t_a *stack_a);
+void	set_lis_tab_to_one(t_a *stack_a);
 void	find_lis_max(t_a *stack_a);
-void	get_lis(t_a *stack_a);
+void	get_lis(t_a *stack_a, t_a *stack_b);
 void	separate_lis(t_a *stack_a, t_a *stack_b);
-void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int pos);
 void	check_rr_or_rrr(int *tab);
 void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tab, int pos);
 void	compare_total_moves_count(t_a *stack_a, t_a * stack_b);
