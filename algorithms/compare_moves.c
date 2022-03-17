@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   compare_moves.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:08:44 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 13:37:01 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/17 21:06:30 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	check_rr_or_rrr(int *tab)
 			tab[1]++;
 			tab[2]--;
 		}
-		if (tab[0] == 0 || tab[1] == 0)
-			break;
+		// if (tab[0] == 0 || tab[1] == 0)
+		// 	break;
 	}
 	if (tab[0] > 0 && tab[1] > 0)
 	{
@@ -52,8 +52,8 @@ void	check_rr_or_rrr(int *tab)
 			tab[1]--;
 			tab[2]++;
 		}
-		if (tab[0] == 0 || tab[1] == 0)
-			break;
+		// if (tab[0] == 0 || tab[1] == 0)
+		// 	break;
 	}
 }
 
@@ -66,16 +66,6 @@ void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tab, int pos)
 	tab[0] = count_moves_in_a(stack_a, index_next_nb);
 	tab[2] = 0;
 	check_rr_or_rrr(tab);
-	//
-	// {
-	// 	if (index_next_nb > stack_a->size / 2)
-	// 		stack_a->moves[0] -=1;
-	// 	else
-	// 		stack_a->moves[0] += 1;
-	// }
-	//printf("NEXT NUMBER: %d\n", stack_a->tab[index_next_nb]);
-	//printf("POS A: %d\n", stack_a->moves[0]);
-	//printf("POS B: %d\n", stack_a->moves[1]);
 }
 
 void	update_better_element(t_a *stack_a)
@@ -87,7 +77,6 @@ void	update_better_element(t_a *stack_a)
 
 void	compare_total_moves_count(t_a *stack_a, t_a * stack_b)
 {
-	int	index_next_nb;
 	int	i;
 	int	sum1;
 	int	sum2;
@@ -102,20 +91,5 @@ void	compare_total_moves_count(t_a *stack_a, t_a * stack_b)
 		if (sum2 < sum1)
 			update_better_element(stack_a);
 		i++;
-	}
-}
-
-
-void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
-{
-	while (stack_b->size > 0)
-	{
-		compare_total_moves_count(stack_a, stack_b);
-		check_move_in_a(stack_a);
-		check_move_in_b(stack_a, stack_b);
-		check_move_in_a_and_b(stack_a, stack_b);
-		pa(stack_a, stack_b);
-		if (is_nb_max_in_stack(stack_b, stack_a->tab[0]) == 1 && is_nb_max_in_stack(stack_a, stack_a->tab[0]) == 1)
-			sa(stack_a, stack_b);
 	}
 }

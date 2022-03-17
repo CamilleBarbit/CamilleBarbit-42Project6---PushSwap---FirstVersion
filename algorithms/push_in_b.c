@@ -3,26 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_in_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:28:02 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/15 10:48:15 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/17 20:45:00 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-/*FUNCTION TO TEST */
-static void	print_tab(int *tab, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("%d\n", tab[i++]);
-	}
-}
 
 /*
 Function to check if each element of stack_a is in the LIS or not
@@ -62,9 +50,5 @@ void	separate_lis(t_a *stack_a, t_a *stack_b)
 		}
 		i++;
 	}
-	printf("TAB A:\n");
-	print_tab(stack_a->tab, stack_a->size);
-	printf("TAB B:\n");
-	print_tab(stack_b->tab, stack_b->size);
 	free(stack_a->sub_sequence); //Je n'en ai plus besoin, donc je free!
 }

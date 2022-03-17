@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 10:24:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/15 11:00:38 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/17 20:37:38 by camillebarb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /***************** FUNCTION USED IN BOTH THE MAIN ALGORITHM AND THE ALGORITHM OF FIVE*****************/
 /*
-Function to look for the smallest number in stack_a, in order to put it on top
+Function to look for the smallest number in stack_a, in order to put it on top (it returns its index)
 */
 int	look_for_smallest_num(t_a *stack_a)
 {
