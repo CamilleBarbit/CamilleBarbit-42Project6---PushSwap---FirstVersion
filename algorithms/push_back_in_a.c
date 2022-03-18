@@ -6,11 +6,24 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:27:50 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 12:30:52 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 11:11:07 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+
+/*TEST*/
+static void	print_tab(int *tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		printf("%d\n", tab[i++]);
+	}
+}
 
 void	check_move_in_a(t_a *stack_a)
 {
@@ -18,7 +31,7 @@ void	check_move_in_a(t_a *stack_a)
 	{
 		while(stack_a->moves[0] != 0)
 		{
-			ra(stack_a);
+			rra(stack_a);
 			stack_a->moves[0]++;
 		}
 	}
@@ -26,7 +39,7 @@ void	check_move_in_a(t_a *stack_a)
 	{
 		while(stack_a->moves[0] != 0)
 		{
-			rra(stack_a);
+			ra(stack_a);
 			stack_a->moves[0]--;
 		}
 	}
@@ -38,7 +51,7 @@ void	check_move_in_b(t_a *stack_a, t_a *stack_b)
 	{
 		while(stack_a->moves[1] != 0)
 		{
-			rb(stack_b);
+			rrb(stack_b);
 			stack_a->moves[1]++;
 		}
 	}
@@ -46,7 +59,7 @@ void	check_move_in_b(t_a *stack_a, t_a *stack_b)
 	{
 		while(stack_a->moves[1] != 0)
 		{
-			rrb(stack_b);
+			rb(stack_b);
 			stack_a->moves[1]--;
 		}
 	}
@@ -58,7 +71,7 @@ void	check_move_in_a_and_b(t_a *stack_a, t_a *stack_b)
 	{
 		while(stack_a->moves[2] != 0)
 		{
-			rr(stack_a, stack_b);
+			rrr(stack_a, stack_b);
 			stack_a->moves[2]++;
 		}
 	}
@@ -66,7 +79,7 @@ void	check_move_in_a_and_b(t_a *stack_a, t_a *stack_b)
 	{
 		while(stack_a->moves[2] != 0)
 		{
-			rrr(stack_a, stack_b);
+			rr(stack_a, stack_b);
 			stack_a->moves[2]--;
 		}
 	}

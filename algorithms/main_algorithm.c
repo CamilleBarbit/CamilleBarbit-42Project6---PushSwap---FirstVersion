@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_algorithm.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 21:09:23 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/18 11:03:41 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
 {
 	int	i;
 
+	printf("here");
 	i = stack_b->size;
 	while (i > 0)
 	{
 		compare_total_moves_count(stack_a, stack_b);
-		//printf("here");
 		check_move_in_a(stack_a);
 		check_move_in_b(stack_a, stack_b);
 		check_move_in_a_and_b(stack_a, stack_b);

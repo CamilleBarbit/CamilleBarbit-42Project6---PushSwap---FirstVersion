@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   compare_moves.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:08:44 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 21:06:30 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/18 11:11:33 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ void	check_rr_or_rrr(int *tab)
 		// if (tab[0] == 0 || tab[1] == 0)
 		// 	break;
 	}
+	// printf("TAB[0]: %d\n", tab[0]);
+	// printf("TAB[1]: %d\n", tab[1]);
+	// printf("TAB[2]: %d\n", tab[2]);
 }
 
 void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tab, int pos)
