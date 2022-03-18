@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 11:35:46 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 12:25:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
 	int	j;
 
 	i = stack_b->size;
-	printf("SIZE B: %d\n", stack_b->size);
 	while (i > 0)
 	{
 		compare_total_moves_count(stack_a, stack_b);
@@ -71,6 +70,4 @@ void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
 	print_tab(stack_a->tab, stack_a->size);
 	printf("TAB B - step 2:\n");
 	print_tab(stack_b->tab, stack_b->size);
-	printf("SIZE A: %d\n", stack_a->size);
-	printf("SIZE B: %d\n", stack_b->size);
 }
