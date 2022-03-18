@@ -6,24 +6,11 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 12:27:50 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 11:11:07 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 11:19:11 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-
-/*TEST*/
-static void	print_tab(int *tab, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		printf("%d\n", tab[i++]);
-	}
-}
 
 void	check_move_in_a(t_a *stack_a)
 {

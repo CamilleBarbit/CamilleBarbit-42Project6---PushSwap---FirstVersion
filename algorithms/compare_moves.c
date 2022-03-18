@@ -6,11 +6,23 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:08:44 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 11:11:33 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 12:22:38 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+/*TEST*/
+static void	print_tab(int *tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		printf("%d\n", tab[i++]);
+	}
+}
 
 int	sum_moves(int *tab)
 {
@@ -35,39 +47,33 @@ void	check_rr_or_rrr(int *tab)
 {
 	if (tab[0] < 0 && tab[1] < 0)
 	{
-		while (tab[0] != 0 || tab[1] != 0)
+		while (tab[0] < 0 || tab[1] < 0)
 		{
 			tab[0]++;
 			tab[1]++;
 			tab[2]--;
 		}
-		// if (tab[0] == 0 || tab[1] == 0)
-		// 	break;
 	}
 	if (tab[0] > 0 && tab[1] > 0)
 	{
-		while (tab[0] != 0 || tab[1] != 0)
+		while (tab[0] > 0 || tab[1] > 0)
 		{
 			tab[0]--;
 			tab[1]--;
 			tab[2]++;
 		}
-		// if (tab[0] == 0 || tab[1] == 0)
-		// 	break;
 	}
-	// printf("TAB[0]: %d\n", tab[0]);
-	// printf("TAB[1]: %d\n", tab[1]);
-	// printf("TAB[2]: %d\n", tab[2]);
 }
 
 void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tab, int pos)
 {
 	int	index_next_nb;
 
-	tab[1] = count_moves_in_b(stack_b, pos);
+	tab[1] = count_moves_in_b(stack_b, pos);	
 	index_next_nb = find_closest_nb(stack_a, stack_b->tab[pos]);
 	tab[0] = count_moves_in_a(stack_a, index_next_nb);
 	tab[2] = 0;
+	print_tab(tab, 3);
 	check_rr_or_rrr(tab);
 }
 
@@ -85,10 +91,12 @@ void	compare_total_moves_count(t_a *stack_a, t_a * stack_b)
 	int	sum2;
 
 	get_pos_a_and_pos_b(stack_a, stack_b, stack_a->moves, 0); //je mets dans la struct les infos pour stack_b[0]
+	print_tab(stack_a->moves, 3);
 	i = 1;
 	while (i < stack_b->size)
 	{
 		get_pos_a_and_pos_b(stack_a, stack_b, stack_a->tempo, i);
+		print_tab(stack_a->tempo, 3);
 		sum1 = sum_moves(stack_a->moves);
 		sum2 = sum_moves(stack_a->tempo);
 		if (sum2 < sum1)
