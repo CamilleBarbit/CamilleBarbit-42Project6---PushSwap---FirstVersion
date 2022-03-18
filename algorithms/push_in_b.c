@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_in_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:28:02 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/17 20:45:00 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/18 14:04:16 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ void	separate_lis(t_a *stack_a, t_a *stack_b)
 	int	i;
 
 	i = 0;
+
 	while(i < stack_a->size)
 	{
 		if (check_if_in_sub_sequence(stack_a, 0) == 1)
 		{
 			push_in_b(stack_a, stack_b, 0);
 		}
-		if (check_if_in_sub_sequence(stack_a, i) == 1)
+		else if (check_if_in_sub_sequence(stack_a, i) == 1)
 		{
 			push_in_b(stack_a, stack_b, i);
 			i = 0;
