@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:16:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 17:26:21 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 17:36:12 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	turn_moves_into_action(t_a *stack_a, t_a *stack_b);
 void	check_move_in_a(t_a *stack_a);
 void	check_move_in_b(t_a *stack_a, t_a *stack_b);
 void	check_move_in_a_and_b(t_a *stack_a, t_a *stack_b);
-void	free_all(t_a *stack_a, t_a *stack_b);
 int		arg_is_valid(char *str);
 int		check_overflow(char *str1);
 int		check_all_args(char **argv, int argc);

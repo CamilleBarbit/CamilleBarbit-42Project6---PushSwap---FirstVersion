@@ -6,13 +6,13 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 17:28:18 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 17:36:05 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_all(t_a *stack_a, t_a *stack_b)
+static void	free_all(t_a *stack_a, t_a *stack_b)
 {
 	free(stack_a->tab);
 	free(stack_b->tab);
