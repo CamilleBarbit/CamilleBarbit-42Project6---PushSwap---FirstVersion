@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 10:49:20 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 14:02:00 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ int	check_all_args(char **argv, int argc)
 	return (0);
 }
 
-/*TEST*/
-static void	print_tab(int *tab, int size)
-{
-	int	i;
+// /*TEST*/
+// static void	print_tab(int *tab, int size)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < size)
-	{
-		printf("%d\n", tab[i++]);
-	}
-}
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		printf("%d\n", tab[i++]);
+// 	}
+// }
 
 
 /*
@@ -89,7 +89,7 @@ int main(int argc, char **argv)
 		// printf("TAB A - step 1:\n");
 		// print_tab(stack_a->tab, stack_a->size);
 		// printf("TAB B - step 1:\n");
-		print_tab(stack_b->tab, stack_b->size);
+		//print_tab(stack_b->tab, stack_b->size);
 		get_lis(stack_a, stack_b);
 		turn_moves_into_action(stack_a, stack_b);
 		// separate_lis(stack_a, stack_b);
