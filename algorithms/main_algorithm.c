@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 15:16:01 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/18 16:44:33 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	get_lis(t_a *stack_a, t_a *stack_b)
 	find_lis_max(stack_a); //Je determine la longueur de ma LIS
 	get_sub_sequence(stack_a); //Je recupere les valeurs de la LIS
 	separate_lis(stack_a, stack_b); //Je push la LIS dans stack_b
-	// printf("TAB A - TABLEAU AVEC LIS:\n");
+	// printf("TAB A - AVEC LA LIS:\n");
 	// print_tab(stack_a->tab, stack_a->size);
 	// printf("TAB B:\n");
 	// print_tab(stack_b->tab, stack_b->size);
