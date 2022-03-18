@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 20:55:48 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/18 10:49:20 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ int	check_all_args(char **argv, int argc)
 	return (0);
 }
 
-/*
-FONCTION DE TEST POUR AFFICHER LE TABLEAU AVANT TRI
-*/
-
-static void	show_tab(t_a *stack_a)
+/*TEST*/
+static void	print_tab(int *tab, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (i < stack_a-> size)
-		printf("%d\n", stack_a->tab[i++]);
+	while (i < size)
+	{
+		printf("%d\n", tab[i++]);
+	}
 }
+
 
 /*
 MAIN PROGRAM
@@ -65,7 +65,6 @@ int main(int argc, char **argv)
 			return (free(stack_a), free(stack_b), printf("ERROR\nInvalid arguments\n"), 1);
 		if (check_first_arg(argv[1], stack_a, stack_b) == 1)
 			return (free(stack_a), free(stack_b), printf("ERROR\nOverflowOrDouble"), 1);
-		show_tab(stack_a);
 		if (stack_a->size > 1)
 		{
 			if (check_if_in_order(stack_a) == 0)
@@ -87,6 +86,10 @@ int main(int argc, char **argv)
 			return (free(stack_a), 1);
 		init_struct(stack_a, stack_b, argc - 1);
 		fill_stack_a(stack_a, argv, 1);
+		// printf("TAB A - step 1:\n");
+		// print_tab(stack_a->tab, stack_a->size);
+		// printf("TAB B - step 1:\n");
+		print_tab(stack_b->tab, stack_b->size);
 		get_lis(stack_a, stack_b);
 		turn_moves_into_action(stack_a, stack_b);
 		// separate_lis(stack_a, stack_b);
