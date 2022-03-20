@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/20 15:24:27 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:14:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	free_all(t_a *stack_a, t_a *stack_b)
 	stack_b = NULL;
 }
 
-static int	check_all_args(char **argv, int argc)
+static int	check_all_args(char **argv, int argc, t_a *stack_a, t_a *stack_b)
 {
 	int	i;
 
@@ -50,20 +50,19 @@ static int	check_all_args(char **argv, int argc)
 	return (0);
 }
 
-static int	malloc(t_a *stack_a, t_a *stack_b)
+static void	start_sorting(t_a *stack_a, t_a *stack_b)
 {
-	stack_a = malloc(sizeof(t_a));
-	if (!stack_a)
-		return (1);
-	stack_b = malloc(sizeof(t_a));
-	if (!stack_b)
-		return (free(stack_a), 1);
-}
-
-static void	start_sorting(t_a *stack_am, t_a *stack_b)
-{
-	get_lis(stack_a, stack_b);
-	turn_moves_into_action(stack_a, stack_b);
+	if (stack_a->size == 1)
+		return ;
+	else if (stack_a->size == 3)
+		sort_three(stack_a);
+	else if (stack_a->size == 5)
+		sort_five(stack_a, stack_b);
+	else
+	{
+		get_lis(stack_a, stack_b);
+		turn_moves_into_action(stack_a, stack_b);
+	}
 }
 
 /*TEST*/
@@ -83,12 +82,14 @@ int	main(int argc, char **argv)
 	t_a	*stack_a;
 	t_a	*stack_b;
 
-	stack_a = NULL;
-	stack_b = NULL;
 	if (argc > 1)
 	{
-		if (malloc(stack_a, stack_b) == 1)
+		stack_a = malloc(sizeof(t_a));
+		if (!stack_a)
 			return (1);
+		stack_b = malloc(sizeof(t_a));
+		if (!stack_b)
+			return (free(stack_a), 1);
 		if (argc == 2)
 		{
 			if (argv1_is_valid(argv) == 1)
@@ -97,10 +98,8 @@ int	main(int argc, char **argv)
 				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
 		}
 		if (argc > 2)
-		{
-			if (check_all_args(argv, argc) == 1)
+			if (check_all_args(argv, argc, stack_a, stack_b) == 1)
 				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
-		}
 		start_sorting(stack_a, stack_b);
 		free_all(stack_a, stack_b);
 	}
