@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+         #
+#    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/17 20:51:16 by camillebarb      ###   ########.fr        #
+#    Updated: 2022/03/20 15:41:15 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ all: ${NAME}
 	@${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} : ${O_FILES} ${PRINTF_A} ${LIBFT_A}
-	@${CC} ${O_FILES} ${PRINTF_PATH} ${LIBFT_PATH} -o ${NAME}
+	@${CC} ${O_FILES} ${PRINTF_PATH} ${LIBFT_PATH} -g -fsanitize=address -o ${NAME}
 
 ${PRINTF_A}:
 	@(cd ${PRINTF_DIRECTORY} && ${MAKE})
