@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 13:44:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/15 11:00:31 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:35:40 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int	is_nb_max_in_stack(t_a *stack, int nb)
 	while (i < stack->size)
 	{
 		if (stack->tab[i] > nb)
-			return (0); //mon nombre n'est pas le maximum dans la stack_a ou dans la stack_b
+			return (0);
 		i++;
 	}
-	return (1); //mon nombre est le maximum dans la stack_a ou dans la stack_b
+	return (1);
 }
 
 /*
@@ -37,7 +37,6 @@ int	count_moves_in_b(t_a *stack_b, int pos)
 	int	count;
 
 	count = 0;
-	//printf("THE NUMBER IN QUESTION IS : %d\n", stack_b->tab[pos]);
 	if (pos > stack_b->size / 2)
 	{
 		while (pos < stack_b->size)
@@ -58,7 +57,8 @@ int	count_moves_in_b(t_a *stack_b, int pos)
 }
 
 /*
-Function to find the position of the number directly inferior to my number -> It must be the closest number > to the one I have in stack_b
+Function to find the position of the number directly inferior to my number
+-> It must be the closest number > to the one I have in stack_b
 */
 int	find_closest_nb(t_a *stack_a, int nb)
 {
@@ -83,11 +83,12 @@ int	find_closest_nb(t_a *stack_a, int nb)
 		}
 		i++;
 	}
-	return (k); // this is the index of the closest following number
+	return (k);
 }
 
 /*
-Function that counts the number of moves to put a the number just right after that of stack_b at the top of stack_a
+Function that counts the number of moves to put a the number
+just right after that of stack_b at the top of stack_a
 */
 int	count_moves_in_a(t_a *stack_a, int pos)
 {

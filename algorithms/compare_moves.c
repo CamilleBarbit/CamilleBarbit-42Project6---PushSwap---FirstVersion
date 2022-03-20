@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:08:44 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 14:05:44 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:39:03 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	sum_moves(int *tab)
 		i++;
 	}
 	sum = temp[0] + temp[1] + temp[2];
-	return (sum); //count the number of moves ->after optimisation;
+	return (sum);
 }
 
 void	check_rr_or_rrr(int *tab)
@@ -57,7 +57,7 @@ void	get_pos_a_and_pos_b(t_a *stack_a, t_a *stack_b, int *tab, int pos)
 {
 	int	index_next_nb;
 
-	tab[1] = count_moves_in_b(stack_b, pos);	
+	tab[1] = count_moves_in_b(stack_b, pos);
 	index_next_nb = find_closest_nb(stack_a, stack_b->tab[pos]);
 	tab[0] = count_moves_in_a(stack_a, index_next_nb);
 	tab[2] = 0;
@@ -71,13 +71,13 @@ void	update_better_element(t_a *stack_a)
 	stack_a->moves[2] = stack_a->tempo[2];
 }
 
-void	compare_total_moves_count(t_a *stack_a, t_a * stack_b)
+void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 {
 	int	i;
 	int	sum1;
 	int	sum2;
 
-	get_pos_a_and_pos_b(stack_a, stack_b, stack_a->moves, 0); //je mets dans la struct les infos pour stack_b[0]
+	get_pos_a_and_pos_b(stack_a, stack_b, stack_a->moves, 0);
 	i = 1;
 	while (i < stack_b->size)
 	{

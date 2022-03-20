@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 10:24:40 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 20:37:38 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/20 16:40:03 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/***************** FUNCTION USED IN BOTH THE MAIN ALGORITHM AND THE ALGORITHM OF FIVE*****************/
 /*
-Function to look for the smallest number in stack_a, in order to put it on top (it returns its index)
+Function to look for the smallest number in stack_a
+in order to put it on top (it returns its index)
 */
 int	look_for_smallest_num(t_a *stack_a)
 {
@@ -37,7 +37,6 @@ int	look_for_smallest_num(t_a *stack_a)
 	return (j);
 }
 
-/***************** FUNCTION USED IN THE MAIN ALGORITHM*****************/
 /*
 Function to place the minimum on top of stack_a->tab if need be
 */
@@ -61,7 +60,6 @@ void	place_it_on_top(t_a *stack_a, int min_pos)
 	}
 }
 
-
 /*
 Function to set stack_a->lis_tab to 1s
 */
@@ -70,10 +68,9 @@ void	set_lis_tab_to_one(t_a *stack_a)
 	int	i;
 
 	i = 0;
-	while(i < stack_a->size)
+	while (i < stack_a->size)
 		stack_a->lis_tab[i++] = 1;
 }
-
 
 /*
 Function to look for the biggest num in the stack -> it returns its index

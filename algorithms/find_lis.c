@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:32:09 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/15 10:39:54 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:32:28 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ void	get_sub_sequence(t_a *stack_a)
 		}
 		j--;
 	}
-	free(stack_a->lis_tab); //je free lis_tab, car je n'en ai plus besoin
+	free(stack_a->lis_tab);
 }
 
 /*
-Step 2: Function to actually get the length of the LIS ant its index in stack_a->lis_tab
+Step 2: Function to actually get the length of the LIS 
+and its index in stack_a->lis_tab
 */
 void	find_lis_max(t_a *stack_a)
 {
@@ -58,7 +59,6 @@ void	find_lis_max(t_a *stack_a)
 			stack_a->max_pos = i;
 		}
 		i++;
-
 	}
 }
 
@@ -80,7 +80,8 @@ void	test_lis(t_a *stack_a)
 	{
 		while (j < i)
 		{
-			if (stack_a->tab[i] > stack_a->tab[j] && stack_a->lis_tab[i] < stack_a->lis_tab[j] + 1)
+			if (stack_a->tab[i] > stack_a->tab[j]
+				&& stack_a->lis_tab[i] < stack_a->lis_tab[j] + 1)
 			{
 				stack_a->lis_tab[i] = stack_a->lis_tab[j] + 1;
 			}
