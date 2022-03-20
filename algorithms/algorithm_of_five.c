@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:10:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/20 17:03:10 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 17:41:02 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	sort_five(t_a *stack_a, t_a *stack_b)
 	int	j;
 	int	count;
 
+	if (check_if_in_order(stack_a) == 1)
+		return ;
 	count = 2;
 	while (count > 0)
 	{
