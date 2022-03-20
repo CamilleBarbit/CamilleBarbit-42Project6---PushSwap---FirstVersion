@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/20 16:14:27 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 17:34:54 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,18 +65,6 @@ static void	start_sorting(t_a *stack_a, t_a *stack_b)
 	}
 }
 
-/*TEST*/
-// static void	print_tab(int *tab, int size)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		printf("%d\n", tab[i++]);
-// 	}
-// }
-
 int	main(int argc, char **argv)
 {
 	t_a	*stack_a;
@@ -93,13 +81,13 @@ int	main(int argc, char **argv)
 		if (argc == 2)
 		{
 			if (argv1_is_valid(argv) == 1)
-				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
+				return (free_all(stack_a, stack_b), write(2, "Error\n", 6), 1);
 			if (check_first_arg(argv[1], stack_a, stack_b) == 1)
-				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
+				return (free_all(stack_a, stack_b), write(2, "Error\n", 6), 1);
 		}
 		if (argc > 2)
 			if (check_all_args(argv, argc, stack_a, stack_b) == 1)
-				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
+				return (free_all(stack_a, stack_b), write(2, "Error\n", 6), 1);
 		start_sorting(stack_a, stack_b);
 		free_all(stack_a, stack_b);
 	}
