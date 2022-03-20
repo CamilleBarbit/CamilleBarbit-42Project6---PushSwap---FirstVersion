@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 12:38:14 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 17:34:07 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:29:20 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	check_first_arg(char *str, t_a *stack_a, t_a *stack_b)
 	int		len;
 	int		i;
 
-	tab_args = ft_split(str,' ');
-	len = ft_count_words(str , ' ');
+	tab_args = ft_split(str, ' ');
+	len = ft_count_words(str, ' ');
 	i = 0;
 	while (i < len)
 	{
@@ -62,5 +62,3 @@ int	check_first_arg(char *str, t_a *stack_a, t_a *stack_b)
 	free_tab(tab_args);
 	return (0);
 }
-
-//Que dois-je faire si au final je n'ai qu'un nombre dans mon argv1?
