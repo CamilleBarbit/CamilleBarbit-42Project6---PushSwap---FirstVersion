@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 17:36:05 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 15:24:27 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,23 @@
 
 static void	free_all(t_a *stack_a, t_a *stack_b)
 {
-	free(stack_a->tab);
-	free(stack_b->tab);
+	if (stack_a->tab)
+	{
+		free(stack_a->tab);
+		stack_a->tab = NULL;
+	}
+	if (stack_b->tab)
+	{
+		free(stack_b->tab);
+		stack_b->tab = NULL;
+	}
 	free(stack_a);
+	stack_a = NULL;
 	free(stack_b);
+	stack_b = NULL;
 }
 
-int	check_all_args(char **argv, int argc)
+static int	check_all_args(char **argv, int argc)
 {
 	int	i;
 
@@ -35,7 +45,25 @@ int	check_all_args(char **argv, int argc)
 			return (1);
 		i++;
 	}
+	init_struct(stack_a, stack_b, argc - 1);
+	fill_stack_a(stack_a, argv, 1);
 	return (0);
+}
+
+static int	malloc(t_a *stack_a, t_a *stack_b)
+{
+	stack_a = malloc(sizeof(t_a));
+	if (!stack_a)
+		return (1);
+	stack_b = malloc(sizeof(t_a));
+	if (!stack_b)
+		return (free(stack_a), 1);
+}
+
+static void	start_sorting(t_a *stack_am, t_a *stack_b)
+{
+	get_lis(stack_a, stack_b);
+	turn_moves_into_action(stack_a, stack_b);
 }
 
 /*TEST*/
@@ -52,88 +80,29 @@ int	check_all_args(char **argv, int argc)
 
 int	main(int argc, char **argv)
 {
-	t_a	*stack_a = NULL;
-	t_a *stack_b = NULL;
+	t_a	*stack_a;
+	t_a	*stack_b;
 
-	if (argc > 1) //au moins deux arguments
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc > 1)
 	{
-		stack_a = malloc(sizeof(t_a));
-		if (!stack_a)
+		if (malloc(stack_a, stack_b) == 1)
 			return (1);
-		stack_b = malloc(sizeof(t_a));
-		if (!stack_b)
-			return (free(stack_a), 1);
 		if (argc == 2)
 		{
 			if (argv1_is_valid(argv) == 1)
-				return (free(stack_a), free(stack_b), printf("ERROR\nInvalid arguments\n"), 1);
+				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
 			if (check_first_arg(argv[1], stack_a, stack_b) == 1)
-				return (free_all(stack_a, stack_b), printf("ERROR\nOverflowOrDouble"), 1);
+				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
 		}
 		if (argc > 2)
 		{
 			if (check_all_args(argv, argc) == 1)
-				return (free(stack_a), free(stack_b), printf("ERROR\nInvalid arguments\n"), 1);
-			init_struct(stack_a, stack_b, argc - 1);
-			fill_stack_a(stack_a, argv, 1);
+				return (free_all(stack_a, stack_b), write(2, "ERROR\n", 6), 1);
 		}
-		get_lis(stack_a, stack_b);
-		turn_moves_into_action(stack_a, stack_b);
-		free_all(stack_a, stack_b);	
+		start_sorting(stack_a, stack_b);
+		free_all(stack_a, stack_b);
 	}
+	return (0);
 }
-/*
-MAIN PROGRAM
-*/
-
-// int main(int argc, char **argv)
-// {
-// 	t_a	*stack_a = NULL;
-// 	t_a *stack_b = NULL;
-
-// 	if (argc == 2) //PARSING OK
-// 	{
-// 		stack_a = malloc(sizeof(t_a));
-// 		if (!stack_a)
-// 			return (1);
-// 		stack_b = malloc(sizeof(t_a));
-// 		if (!stack_b)
-// 			return (free(stack_a), 1);
-// 		if (argv1_is_valid(argv) == 1)
-// 			return (free(stack_a), free(stack_b), printf("ERROR\nInvalid arguments\n"), 1);
-// 		if (check_first_arg(argv[1], stack_a, stack_b) == 1)
-// 			return (free(stack_a), free(stack_b), printf("ERROR\nOverflowOrDouble"), 1);
-// 		// if (stack_a->size > 1)
-// 		// {
-// 		// 	if (check_if_in_order(stack_a) == 0)
-// 		// 		sort_three(stack_a);
-// 		// 	else
-// 		// 		free(TOUT);
-// 		get_lis(stack_a, stack_b);
-// 		turn_moves_into_action(stack_a, stack_b);
-// 	}
-// 	if (argc > 2)
-// 	{
-// 		if (check_all_args(argv, argc) == 1)
-// 			return (printf("ERROR\nInvalid arguments\n"), 1);
-// 		// stack_a = malloc(sizeof(t_a));
-// 		// if (!stack_a)
-// 		// 	return (1);
-// 		// stack_b = malloc(sizeof(t_a));
-// 		// if (!stack_b)
-// 		// 	return (free(stack_a), 1);
-// 		init_struct(stack_a, stack_b, argc - 1);
-// 		fill_stack_a(stack_a, argv, 1);
-// 		get_lis(stack_a, stack_b);
-// 		turn_moves_into_action(stack_a, stack_b);
-// 		//printf("TAB A - END:\n");
-// 		//print_tab(stack_a->tab, stack_a->size);
-// 		//print_tab(stack_a->tab, stack_a->size);
-// 		//if (check_if_in_order(stack_a) == 0)
-// 				// sort_three(stack_a);
-// 		// else
-// 		// 	return (1);
-// 		// free(stack);
-// 	}
-// 	return (0);
-// }
