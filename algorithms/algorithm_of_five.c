@@ -6,14 +6,15 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:10:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/15 10:25:17 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 17:03:10 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /*
-Function to push numbers from stack_a to stack_b depending on their position in stack_a
+Function to push numbers from stack_a to stack_b
+depending on their position in stack_a
 */
 void	push_in_b(t_a *stack_a, t_a *stack_b, int pos)
 {
@@ -35,13 +36,12 @@ void	push_in_b(t_a *stack_a, t_a *stack_b, int pos)
 		}
 		pb(stack_a, stack_b);
 	}
-
 }
 
 void	sort_five(t_a *stack_a, t_a *stack_b)
 {
 	int	j;
-	int count;
+	int	count;
 
 	count = 2;
 	while (count > 0)
@@ -54,4 +54,3 @@ void	sort_five(t_a *stack_a, t_a *stack_b)
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
 }
-
