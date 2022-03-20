@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 19:24:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/18 15:40:39 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:24:57 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	rotate(t_a *stack)
 {
-	int tempo1;
-	int tempo2;
-	int i;
+	int	tempo1;
+	int	tempo2;
+	int	i;
 
 	i = stack->size - 1;
 	tempo1 = stack->tab[i];

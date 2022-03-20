@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camillebarbit <camillebarbit@student.42    +#+  +:+       +#+        */
+/*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:20:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/03 08:45:50 by camillebarb      ###   ########.fr       */
+/*   Updated: 2022/03/20 16:25:36 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	swap(t_a *stack)
 {
-	int tempo;
+	int	tempo;
 
 	if (stack->size <= 1)
 		return ;

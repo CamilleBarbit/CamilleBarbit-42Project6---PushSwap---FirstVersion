@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:01:31 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/17 13:35:14 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:26:04 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	add_top(t_a *stack, int nb)
 {
-	int tempo1;
-	int tempo2;
-	int i;
+	int	tempo1;
+	int	tempo2;
+	int	i;
 
 	i = 0;
 	tempo1 = stack->tab[0];
@@ -33,9 +33,9 @@ void	add_top(t_a *stack, int nb)
 
 void	remove_top(t_a *stack)
 {
-	int tempo1;
-	int tempo2;
-	int i;
+	int	tempo1;
+	int	tempo2;
+	int	i;
 
 	i = stack->size - 1;
 	tempo1 = stack->tab[i];
