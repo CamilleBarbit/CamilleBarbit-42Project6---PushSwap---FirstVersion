@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 20:16:57 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/04 17:02:11 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/20 16:27:02 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	check_if_in_order(t_a *stack_a)
 			return (0);
 		i++;
 		j++;
-
 	}
 	return (1);
 }
