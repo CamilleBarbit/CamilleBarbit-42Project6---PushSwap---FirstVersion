@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:21:02 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/20 17:34:54 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:30:39 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	free_all(t_a *stack_a, t_a *stack_b)
 {
+	(void)stack_a;
+	(void)stack_b;
 	if (stack_a->tab)
 	{
 		free(stack_a->tab);
@@ -21,7 +23,7 @@ static void	free_all(t_a *stack_a, t_a *stack_b)
 	}
 	if (stack_b->tab)
 	{
-		free(stack_b->tab);
+		free(stack_b->tab); // <- error
 		stack_b->tab = NULL;
 	}
 	free(stack_a);
@@ -29,6 +31,18 @@ static void	free_all(t_a *stack_a, t_a *stack_b)
 	free(stack_b);
 	stack_b = NULL;
 }
+
+// static void	print_stack(int *tab, int size)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		printf("%d\n", tab[i]);
+// 		i++;
+// 	}
+// }
 
 static int	check_all_args(char **argv, int argc, t_a *stack_a, t_a *stack_b)
 {
@@ -52,7 +66,7 @@ static int	check_all_args(char **argv, int argc, t_a *stack_a, t_a *stack_b)
 
 static void	start_sorting(t_a *stack_a, t_a *stack_b)
 {
-	if (stack_a->size == 1)
+	if (stack_a->size <= 1)
 		return ;
 	else if (stack_a->size == 3)
 		sort_three(stack_a);
@@ -69,7 +83,9 @@ int	main(int argc, char **argv)
 {
 	t_a	*stack_a;
 	t_a	*stack_b;
+	int	j;
 
+	j = 0;
 	if (argc > 1)
 	{
 		stack_a = malloc(sizeof(t_a));
@@ -90,6 +106,11 @@ int	main(int argc, char **argv)
 				return (free_all(stack_a, stack_b), write(2, "Error\n", 6), 1);
 		start_sorting(stack_a, stack_b);
 		free_all(stack_a, stack_b);
+	}
+	while (j < stack_a->size)
+	{
+		if (stack_a->tab[j + 1] < stack_a->tab[j])
+			printf()
 	}
 	return (0);
 }
