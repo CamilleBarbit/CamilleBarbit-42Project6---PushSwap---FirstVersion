@@ -6,11 +6,23 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 16:32:09 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/20 16:32:28 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/21 14:06:21 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+// static void	print_stack(int *tab, int size)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		printf("%d\n", tab[i]);
+// 		i++;
+// 	}
+// }
 
 /*
 Step 3: Function to get sub_sequence (which actually corresponds to the LIS)

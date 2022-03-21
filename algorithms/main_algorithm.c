@@ -6,11 +6,24 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/21 15:27:38 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/21 16:37:20 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+
+static void	print_stack(int *tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		printf("%d\n", tab[i]);
+		i++;
+	}
+}
 
 /*
 Function to get the LIS and put it in my structure -> stack_a->sub_sequence
@@ -27,23 +40,24 @@ void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
 {
 	int	i;
 	int	j;
-	int	k;
 
 	i = stack_b->size;
 	while (i > 0)
 	{
-		k = find_closest_nb(stack_a, stack_b->tab[i]);
 		compare_total_moves_count(stack_a, stack_b);
 		check_move_in_a(stack_a);
 		check_move_in_b(stack_a, stack_b);
 		check_move_in_a_and_b(stack_a, stack_b);
 		pa(stack_a, stack_b);
-		// if (is_nb_max_in_stack(stack_a, stack_a->tab[0]) == 1)
-		if (stack_b->tab[k] < stack_a->tab[i])
+		if (stack_a->tab[1] < stack_a->tab[0])
 			sa(stack_a);
 		i--;
 	}
 	j = look_for_smallest_num(stack_a);
 	if (j != 0)
 		place_it_on_top(stack_a, j);
+	printf("STACK A APRES TRI\n");
+	print_stack(stack_a->tab, stack_a->size);
+	printf("\n\n");
 }
+
