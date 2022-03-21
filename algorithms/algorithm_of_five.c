@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:10:37 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/21 16:20:18 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/21 21:03:03 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ depending on their position in stack_a
 */
 void	push_in_b(t_a *stack_a, t_a *stack_b, int pos)
 {
-	// if (pos == 0)
-	// 	pb(stack_a, stack_b);
 	if (pos > stack_a->size / 2)
 	{
 		while (pos < stack_a->size)

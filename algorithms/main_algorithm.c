@@ -6,24 +6,24 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/21 17:24:07 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/21 21:55:17 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 
-static void	print_stack(int *tab, int size)
-{
-	int	i;
+// static void	print_stack(int *tab, int size)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < size)
-	{
-		printf("%d\n", tab[i]);
-		i++;
-	}
-}
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		printf("%d\n", tab[i]);
+// 		i++;
+// 	}
+// }
 
 /*
 Function to get the LIS and put it in my structure -> stack_a->sub_sequence
@@ -54,10 +54,8 @@ void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
 		i--;
 	}
 	j = look_for_smallest_num(stack_a);
-	if (j != 0)
-		place_it_on_top(stack_a, j);
-	printf("STACK A APRES TRI\n");
-	print_stack(stack_a->tab, stack_a->size);
-	printf("\n\n");
+	printf("INDICE DU MIN: %d\n", j);
+	//rra(stack_a);
+//	place_it_on_top(stack_a, j);
 }
 
