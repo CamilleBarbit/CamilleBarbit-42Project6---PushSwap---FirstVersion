@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 10:08:44 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/21 16:38:13 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/21 17:22:38 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,16 @@ void	compare_total_moves_count(t_a *stack_a, t_a *stack_b)
 
 	get_pos_a_and_pos_b(stack_a, stack_b, stack_a->moves, 0);
 	i = 1;
-	while (i < stack_b->size)
+	if (stack_a->size > 1)
 	{
-		get_pos_a_and_pos_b(stack_a, stack_b, stack_a->tempo, i);
-		sum1 = sum_moves(stack_a->moves);
-		sum2 = sum_moves(stack_a->tempo);
-		if (sum2 < sum1)
-			update_better_element(stack_a);
-		i++;
+		while (i < stack_b->size)
+		{
+			get_pos_a_and_pos_b(stack_a, stack_b, stack_a->tempo, i);
+			sum1 = sum_moves(stack_a->moves);
+			sum2 = sum_moves(stack_a->tempo);
+			if (sum2 < sum1)
+				update_better_element(stack_a);
+			i++;
+		}
 	}
 }
