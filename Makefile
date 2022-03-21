@@ -6,7 +6,7 @@
 #    By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 13:53:36 by cbarbit           #+#    #+#              #
-#    Updated: 2022/03/20 17:21:11 by cbarbit          ###   ########.fr        #
+#    Updated: 2022/03/21 16:59:55 by cbarbit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ all: ${NAME}
 	@${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} : ${O_FILES} ${PRINTF_A} ${LIBFT_A}
-	@${CC} ${O_FILES} ${PRINTF_PATH} ${LIBFT_PATH} -o ${NAME}
+	@${CC} ${O_FILES} ${PRINTF_PATH} ${LIBFT_PATH} -g3 -fsanitize=address -o ${NAME}
 
 ${PRINTF_A}:
 	@(cd ${PRINTF_DIRECTORY} && ${MAKE})
