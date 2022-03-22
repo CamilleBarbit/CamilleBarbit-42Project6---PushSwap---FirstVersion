@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:03:20 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/21 21:58:02 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/22 09:36:47 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	turn_moves_into_action(t_a *stack_a, t_a *stack_b)
 		i--;
 	}
 	j = look_for_smallest_num(stack_a);
-	printf("INDICE DU MIN: %d\n", j);
-	//rra(stack_a);
 	place_it_on_top(stack_a, j);
 }
 
