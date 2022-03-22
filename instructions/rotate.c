@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 19:24:45 by cbarbit           #+#    #+#             */
-/*   Updated: 2022/03/21 21:51:04 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/22 09:43:38 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,14 @@ void	rotate(t_a *stack)
 	i = stack->size - 1;
 	tempo1 = stack->tab[i];
 	stack->tab[stack->size - 1] = stack->tab[0];
-	if (stack->size >= 2)
+	while (i > 0)
 	{
-		while (i > 0)
-		{
-			tempo2 = tempo1;
-			tempo1 = stack->tab[i - 1];
-			stack->tab[i - 1] = tempo2;
-			i--;
-		}
-		//stack->tab[0] = tempo1;
-		stack->tab[stack->size -1] = tempo1;
+		tempo2 = tempo1;
+		tempo1 = stack->tab[i - 1];
+		stack->tab[i - 1] = tempo2;
+		i--;
 	}
+	stack->tab[stack->size -1] = tempo1;
 }
 
 void	ra(t_a *stack_a)
