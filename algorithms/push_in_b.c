@@ -6,7 +6,7 @@
 /*   By: cbarbit <cbarbit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:28:02 by camillebarb       #+#    #+#             */
-/*   Updated: 2022/03/22 09:45:52 by cbarbit          ###   ########.fr       */
+/*   Updated: 2022/03/22 10:41:32 by cbarbit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,24 @@ Function to separate the LIS from the rest
 */
 void	separate_lis(t_a *stack_a, t_a *stack_b)
 {
-	int	i;
+	//int	i;
 
-	i = 0;
-	while (i < stack_a->size)
+	//i = 0;
+	while (stack_a->size > stack_a->lis_max)
 	{
 		if (check_if_in_sub_sequence(stack_a, 0) == 1)
 		{
 			push_in_b(stack_a, stack_b, 0);
 		}
-		if (check_if_in_sub_sequence(stack_a, i) == 1)
+		else
+		{
+			ra(stack_a);
+		}
+		/*if (check_if_in_sub_sequence(stack_a, i) == 1)
 		{
 			push_in_b(stack_a, stack_b, i);
 			i = 0;
-		}
-		i++;
+		}*/
 	}
 	// printf("PRINT SUBSEQUENCE\n");
 	// print_stack(stack_a->sub_sequence, stack_a->lis_max);
